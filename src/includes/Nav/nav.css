@@ -79,8 +79,12 @@
     }
 }
 
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+}
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item.active{
     color: #fff;
     background: var(--color-green-ingredion)
 }
