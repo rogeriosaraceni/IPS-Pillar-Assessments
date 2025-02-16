@@ -1,0 +1,192 @@
+/* ////////////////////////////////////////////////////////////////////
+app variables
+breadcrumb-app
+btn
+card / cadr-body
+container
+modal
+nav-tabs
+page-item .active/disabled
+tab-content
+hr
+custom tooltips
+custom popover
+//////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+app variables
+* -------------------------------------------------------------------- */
+:root{
+    --app-control-select-border-radius: 0.95rem;
+    --app-active: var(--color-orange);
+    --app-active-border: var(--color-orange);
+}
+
+/* --------------------------------------------------------------------
+breadcrumb-app
+---------------------------------------------------------------------- */
+.breadcrumb-item,
+.breadcrumb-item a { color: #6c757d;}
+.breadcrumb-item.active { color: var(--app-active);}
+
+/* --------------------------------------------------------------------
+btn
+---------------------------------------------------------------------- */
+.btn {
+    --bs-btn-padding-x: .75rem;
+    --bs-btn-padding-y: .215rem;
+    --bs-btn-font-size: 0.9rem;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--color-orange);
+    --bs-btn-border-color: var(--color-orange);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--color-blue);
+    --bs-btn-hover-border-color: var(--color-blue);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--color-blue);
+    --bs-btn-active-border-color: #0a53be;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--color-orange);
+    --bs-btn-disabled-border-color: var(--color-orange);
+}
+
+/* --------------------------------------------------------------------
+* - card / cadr-body
+---------------------------------------------------------------------- */
+.card {
+    /* --bs-card-spacer-y: 0.5rem;
+    --bs-card-spacer-x: 0.5rem; */
+    --bs-card-border-radius: 0.25rem;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 1rem;
+    border: 0;
+    box-shadow: 0 0 .875rem 0 rgba(41, 48, 66, .05);
+}
+.card-title{
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+    .body-popup .card{
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* --------------------------------------------------------------------
+* - containers
+---------------------------------------------------------------------- */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 2.5rem;
+}
+.container-fluid{
+    max-width: 1920px;
+}
+
+/* --------------------------------------------------------------------
+* - menu
+---------------------------------------------------------------------- */
+/* .dropdown-menu, .dropdown-menu-dark {
+    --bs-dropdown-link-active-bg: var(--app-active)!important;
+} */
+
+/* --------------------------------------------------------------------
+* - modal
+---------------------------------------------------------------------- */
+.modal .btn-close{ outline: none;}
+
+.modal-content-app{
+	padding: 1rem;
+}
+.modal-content-app .modal-body{
+	padding-left: 0;
+	padding-right: 0;
+}
+.modal-content-app .modal-footer{
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+.modal-content.modal-content-app{
+    --bs-modal-bg: #f0f2f5;
+}
+.modal-content.modal-content-app .card{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.modal-max{
+	max-width: 80%!important;
+}
+
+/* --------------------------------------------------------------------
+* - nav-tabs
+---------------------------------------------------------------------- */
+.nav-tabs .nav-link{
+    color: #999;
+    transition: all 0.3s;
+}
+.nav-tabs .nav-link:hover{
+    color: #333;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:hover{
+    background-color: var(--app-active);
+}
+
+/* --------------------------------------------------------------------
+* - page-item .active/disabled
+---------------------------------------------------------------------- */
+.page-item.active .page-link {
+    background-color: var(--app-active);
+    border-color: var(--app-active-border);
+}
+.disabled>.page-link,
+.page-link.disabled {
+    background-color: transparent;
+}
+
+/* --------------------------------------------------------------------
+* - tab-content
+---------------------------------------------------------------------- */
+.tab-content {
+    border-left: 1px solid var(--bs-border-color);
+    border-right: 1px solid var(--bs-border-color);
+    border-bottom: 1px solid var(--bs-border-color);
+    padding: 10px;
+}
+
+/* --------------------------------------------------------------------
+* - hr
+---------------------------------------------------------------------- */
+hr { opacity: 0.12;}
+
+/* --------------------------------------------------------------------
+* - custom tooltips
+---------------------------------------------------------------------- */
+.tooltip-300 .tooltip-inner { max-width: 300px;}
+.tooltip-400 .tooltip-inner { max-width: 400px;}
+.tooltip-500 .tooltip-inner { max-width: 500px;}
+.tooltip-600 .tooltip-inner { max-width: 600px;}
+.tooltip-700 .tooltip-inner { max-width: 700px;}
+.tooltip-800 .tooltip-inner { max-width: 800px;}
+
+/* --------------------------------------------------------------------
+* - custom popover
+---------------------------------------------------------------------- */
+.popover-300  { --bs-popover-max-width: 300px;}
+.popover-400  { --bs-popover-max-width: 400px;}
+.popover-500  { --bs-popover-max-width: 500px;}
+.popover-600  { --bs-popover-max-width: 600px;}
+.popover-700  { --bs-popover-max-width: 700px;}
+.popover-800  { --bs-popover-max-width: 800px;}
+.popover-900  { --bs-popover-max-width: 900px;}
+.popover-1000 { --bs-popover-max-width: 1000px;}
+.popover-1100 { --bs-popover-max-width: 1100px;}
+.popover-1200 { --bs-popover-max-width: 1200px;}

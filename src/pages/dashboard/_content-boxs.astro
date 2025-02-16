@@ -1,0 +1,70 @@
+<section class="row slide-in-left">
+    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+        <article class="card illustration flex-fill">
+            <div class="card-body p-0 d-flex flex-fill">
+                <div class="row g-0 w-100">
+                    <div class="col-7">
+                        <div class="illustration-text p-3 m-1">
+                            <h5 class="illustration-text">Welcome back, <span>Jana</span>!</h5>
+                            <p class="mb-0 small">App Ingredion IPS</p>
+                        </div>
+                    </div>
+
+                    <div class="col-5 align-self-end text-end">
+                        <!-- <img src="https://appstack.bootlab.io/img/illustrations/customer-support.png" alt="Customer Support" class="img-fluid illustration-img"> -->
+                        <img src="/assets/images/welcome.png" alt="welcome" class="img-fluid illustration-img">
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+        <article class="card flex-fill">
+            <div class="card-body py-4">
+                <div class="d-flex align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="mb-3">Total users</h5>
+                        <p class="mb-2 fs-3">2.364</p>
+                        <div class="mb-0">
+                            <span class="badge text-green-ingredion me-2">+3.65%</span>
+                            <span class="text-muted">Since last week</span>
+                        </div>
+                    </div>
+
+                    <div class="d-inline-block ms-3">
+                        <i class="bi bi-person-check fs-1 lh-1 text-success"></i>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<style is:inline>
+.badge{
+    background: #f1e9e9;
+}
+
+.illustration {
+    background-color: var(--color-green-ingredion-200);
+    color: var(--color-green-ingredion);
+}
+.illustration-text {
+    color: var(--color-green-ingredion);
+}
+.illustration-img {
+    max-width: 180px;
+    width: 100%;
+}
+</style>
+
+
+<script is:inline>
+    $(document).ready(function() {
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            $("#ip").text(data.ip);
+
+        });
+    });
+</script>

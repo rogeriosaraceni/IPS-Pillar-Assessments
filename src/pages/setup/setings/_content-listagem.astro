@@ -1,0 +1,59 @@
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex align-items-baseline justify-content-between flex-wrap gap-2">
+            <div class="card-title">Listagem</div>
+            <a class="btn btn-primary" href="#">Cadastrar</a>
+        </div>
+
+        <form method="POST" action="">
+            <table class="table table-bordered table-hover text-center table-fixed" id="tab-datatable" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">Canal</th>
+
+                        <th style="width: 070px;" class="no-sort">Edit</th>
+                        <th style="width: 070px;" class="no-sort">Del</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Administrador Geral</td>
+
+                        <td>
+                            <button type="button" class="btn p-0 text-secondary fs-5" data-bs-toggle="modal" data-bs-target="#modalCadAnalise">
+                                <i class="bi bi-pencil-square" data-bs-toggle="tooltip" data-bs-title="Edit"></i>
+                            </button>
+                        </td>
+
+                        <td class="text-center">
+                            <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                                <i class="bi bi-trash icon-tab"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+
+<script is:inline type="module">
+    $("#tab-datatable").DataTable({
+        scrollX: true,
+        scrollCollapse: true,
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+</script>

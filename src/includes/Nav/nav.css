@@ -1,0 +1,81 @@
+.navbarApp {
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 0;
+    box-shadow: 0 0 2rem 0 rgba(41, 48, 66, .1);
+}
+
+.navbarApp .avatar{
+    max-width: 100%;
+    width: 36px;
+    height: 36px;
+    aspect-ratio: auto 36 / 36;
+    border-radius: 50% !important;
+}
+
+/* --------------------------------------------------------------------
+* - toogle-sidebar
+---------------------------------------------------------------------- */
+.btnToogleSidebar{
+    position: relative;
+    margin-right: 1rem;
+    cursor: pointer;
+    display: flex;
+    height: 26px;
+    width: 24px;
+    border-radius: 0.25rem;
+}
+.btnToogleSidebar .hamburger {
+    position: relative;
+    transition: 0.3s;
+}
+.btnToogleSidebar .hamburger,
+.btnToogleSidebar .hamburger:after,
+.btnToogleSidebar .hamburger:before {
+    content: "";
+    display: block;
+    border-radius: 0.25rem;
+    width: 100%;
+    height: 3px;
+    background: var(--bs-body-color);
+    transition: background .1s ease-in-out, color .1s ease-in-out;
+}
+.btnToogleSidebar .hamburger:before {
+    position: absolute;
+    top: -8px;
+    width: 80%;
+}
+.btnToogleSidebar .hamburger:after {
+    position: absolute;
+    bottom: -8px;
+    width: 60%;
+}
+
+.btnToogleSidebar:hover .hamburger,
+.btnToogleSidebar:hover .hamburger:after,
+.btnToogleSidebar:hover .hamburger::before{
+    background: orange;
+}
+
+.nav-theme-user{ flex-direction: row!important;}
+
+.nav-theme-user{
+    flex-direction: row!important;
+}
+.nav-theme-user .data-user-mobile{
+    display: none;
+}
+
+@media (max-width: 876px) {
+    .nav-theme-user .data-user {
+        display: none!important;
+    }
+
+    .nav-theme-user .data-user-mobile{
+        display: block;
+    }
+}
+

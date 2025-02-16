@@ -1,0 +1,19 @@
+---
+import "./nav.css";
+
+import ContentDropTheme from "./_content-drop-theme.astro";
+import ContentDropUser from "./_content-drop-user.astro";
+---
+
+<nav class="navbarApp navbar navbar-expand-md py-1">
+    <div class="container-fluid">
+        <a class="btnToogleSidebar" data-btn="toggleSidebar">
+            <i class="hamburger align-self-center"></i>
+        </a>
+
+        <div class="navbar-nav nav-theme-user gap-2">
+            <ContentDropTheme />
+            <ContentDropUser />
+        </div>
+    </div>
+</nav>

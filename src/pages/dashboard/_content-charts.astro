@@ -1,0 +1,117 @@
+<div class="row slide-in-right">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">Score</div>
+
+                <div class="overflow-auto-charts">
+                    <div class="box-charts" id="chartdiv-score" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    const amchartsTextFill = "#999"
+
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        var chart = am4core.create("chartdiv-score", am4charts.XYChart);
+
+        // Disable amChart Logo
+        if (chart.logo) {
+            chart.logo.disabled = true;
+        }
+        chart.maskBullets = false;
+        chart.padding(10, 0, 0, 0);
+
+        // Add data
+        chart.data = [
+            { category: "Jan", value: 17 },
+            { category: "Feb", value: 14 },
+            { category: "Mar", value: 16 },
+            { category: "Apr", value: 26 },
+            { category: "May", value: 17 },
+            { category: "Jun", value: 12 },
+            { category: "Jul", value: 6 },
+            { category: "Aug", value: 17 },
+            { category: "Sep", value: 14 },
+            { category: "Oct", value: 16 },
+            { category: "Nov", value: 26 },
+            { category: "Dec", value: 17 },
+        ];
+
+        // Ordenar os dados do gráfico do maior para o menor
+        // chart.data.sort(function(a, b) {
+        //     return b.value - a.value;
+        // });
+
+        // Create axes
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "category";
+        categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.minGridDistance = 10;
+        categoryAxis.renderer.grid.template.disabled = true;
+        categoryAxis.renderer.labels.template.horizontalCenter = "middle";
+        categoryAxis.renderer.labels.template.verticalCenter = "middle";
+        categoryAxis.renderer.labels.template.rotation = 0;
+        categoryAxis.renderer.labels.template.fontSize = 11;
+        categoryAxis.renderer.labels.template.maxWidth = 320; // Limitar a largura máxima dos rótulos
+        categoryAxis.renderer.labels.template.wrap = true; // Ativar quebra automática de linha
+        categoryAxis.renderer.labels.template.lineHeight = 0.8; // Ajustar a altura da linha
+        categoryAxis.renderer.labels.template.fill = am4core.color(amchartsTextFill);
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.grid.template.disabled = true;
+        valueAxis.renderer.labels.template.disabled = true;
+
+        // Create series
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueY = "value";
+        series.dataFields.categoryX = "category";
+        series.name = "value";
+        series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}";
+        series.columns.template.fillOpacity = 0.8;
+        series.columns.template.strokeWidth = 0;
+        series.columns.template.fill = am4core.color("rgba(108,179,62, 0.8)");
+
+        series.columns.template.column.cornerRadiusTopLeft = 10;
+        series.columns.template.column.cornerRadiusTopRight = 10;
+        series.columns.template.column.fillOpacity = 0.8;
+        series.columns.template.width = 15;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.interactionsEnabled = false;
+        bullet.dy = -5;
+        bullet.fontSize = 11;
+        bullet.label.text = "{valueY}";
+        bullet.label.fill = am4core.color(amchartsTextFill);
+
+        //colors
+        // series.columns.template.adapter.add("fill", function (fill, target) {
+        //     return chart.colors.getIndex(target.dataItem.index);
+        // });
+
+        // Após definir os dados do gráfico
+        chart.events.on("datavalidated", function() {
+            var categoryCount = chart.data.length;
+            var minGridDistance = categoryAxis.renderer.minGridDistance;
+            var columnWidth = series.columns.template.width;
+
+            // Verifique se columnWidth é uma porcentagem, e ajuste se necessário
+            if (typeof columnWidth === "number") {
+                columnWidth = columnWidth;
+            } else if (typeof columnWidth === "string" && columnWidth.includes("%")) {
+                columnWidth = parseFloat(columnWidth) / 100 * chart.pixelWidth;
+            } else {
+                columnWidth = 30; // Default column width
+            }
+
+            // Defina a largura do gráfico com base no número de categorias
+            var chartWidth = categoryCount * (minGridDistance + columnWidth);
+            document.getElementById('chartdiv-score').style.width = chartWidth + 'px';
+        });
+    });
+</script>

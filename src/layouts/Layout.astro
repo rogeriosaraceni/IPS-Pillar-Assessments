@@ -1,0 +1,27 @@
+---
+import Head from '@includes/Head.astro';
+import Sidebar from '@includes/Sidebar/Sidebar.astro';
+import Nav from '@includes/Nav/Nav.astro';
+import Footer from '@includes/Footer.astro';
+---
+
+<!doctype html>
+<html lang="pt-br">
+	<Head />
+
+	<body>
+        <div id="wrapperApp">
+            <Sidebar/>
+
+            <main class="mainContentApp contentRightApp">
+                <Nav/>
+                <main class="mainPage">
+                    <div class="container-fluid">
+                        <slot />
+                    </div>
+                </main>
+                <Footer/>
+            </main>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+/* ////////////////////////////////////////////////////////////////////
+variables default
+class text color
+class bg color
+
+//////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+* - variables default
+* -------------------------------------------------------------------- */
+:root {
+    --color-green-ingredion:      #6cb33e;
+    --color-green-ingredion-200:  #e3eed6;
+    --color-purple-ingredion:     #6a0c5f;
+    --color-blue-ingredion:       #0073d8;
+
+    --color-green:  #16937a;
+    --color-orange: #e86a28;
+    --color-yellow: #e7e632;
+    --color-red:    #e4141b;
+    --color-blue:   #1969af;
+    --color-grey:   #aaaaaa;
+
+    --bg-input-form: rgba(247, 247, 193, 0.15);
+}
+
+/* --------------------------------------------------------------------
+* - class text color
+---------------------------------------------------------------------- */
+.text-green-ingredion      { color: var(--color-green-ingredion)!important}
+.text-green-ingredion-200  { color: var(--color-green-ingredion-200)!important}
+.text-purple-ingredion     { color: var(--color-purple-ingredion)!important}
+.text-blue-ingredion       { color: var(--color-blue-ingredion)!important}
+
+.text-green { color: var(--color-green)!important}
+.text-orange{ color: var(--color-orange)!important}
+.text-yellow{ color: var(--color-yellow)!important}
+.text-red   { color: var(--color-red)!important}
+.text-blue  { color: var(--color-blue)!important}
+.text-grey  { color: var(--color-grey)!important}
+
+/* --------------------------------------------------------------------
+* - class bg color
+---------------------------------------------------------------------- */
+.bg-green-ingredion-200 { background-color: var(--color-green-ingredion-200)!important}
+.bg-green-ingredion     { background-color: var(--color-green-ingredion)!important}
+.bg-purple-ingredion    { background-color: var(--color-purple-ingredion)!important}
+.bg-blue-ingredion      { background-color: var(--color-blue-ingredion)!important}
+
+.bg-green { background-color: var(--color-green)!important}
+.bg-orange{ background-color: var(--color-orange)!important}
+.bg-yellow{ background-color: var(--color-yellow)!important}
+.bg-red   { background-color: var(--color-red)!important}
+.bg-blue  { background-color: var(--color-blue)!important}
+.bg-grey  { background-color: var(--color-grey)!important}
