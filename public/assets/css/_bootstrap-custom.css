@@ -85,9 +85,9 @@ btn
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     --bs-gutter-x: 2.5rem;
 }
-.container-fluid{
+/* .container-fluid{
     max-width: 1920px;
-}
+} */
 
 /* --------------------------------------------------------------------
 * - menu

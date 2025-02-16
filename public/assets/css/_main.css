@@ -121,7 +121,10 @@ title-breadcrumb
     flex-direction: column;
     margin-bottom: 0.5rem;
 }
-.title-breadcrumb .title{ font-size: 1.25rem;}
+.title-breadcrumb .title{
+    font-size: 1.25rem;
+    color: #495057;
+}
 .title-breadcrumb .breadcrumb{ font-size: 0.85rem;}
 .title-breadcrumb .breadcrumb .active{ color: #6cb33e;}
 
