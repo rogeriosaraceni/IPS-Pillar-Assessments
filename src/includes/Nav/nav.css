@@ -79,3 +79,8 @@
     }
 }
 
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #fff;
+    background: var(--color-green-ingredion)
+}

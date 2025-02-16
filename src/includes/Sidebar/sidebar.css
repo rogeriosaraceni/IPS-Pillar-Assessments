@@ -11,7 +11,7 @@
 
     /* sidebar text color */
     --navlink-color-sidebar: #fff;
-    --navlink-color-sidebar-hover: var(--color-blue-ingredion);
+    --navlink-color-sidebar-hover: #467046;
 
     /* sidebar active text color and bg-color */
     --navlink-color-sidebar-active: #000;
