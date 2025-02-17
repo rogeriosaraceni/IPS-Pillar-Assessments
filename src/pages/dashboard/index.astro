@@ -1,21 +1,24 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import ContentMain from './_content-main.astro'
+import Layout from "@layouts/Layout.astro";
+import ContentSelectMonth from "./_content-select-month.astro";
+import ContentMain from "./_content-main.astro";
 ---
 
 <Layout>
     <div class="title-breadcrumb">
-        <span class="title">Dashboard</span>
+        <div class="d-flex justify-content-between gap-2">
+            <span class="title">Dashboard</span>
+            <ContentSelectMonth />
+        </div>
     </div>
 
     <ContentMain />
 </Layout>
 
 <style is:inline>
-    .badge{
+    .badge {
         background: #f1e9e9;
     }
-
     .illustration {
         background-color: var(--color-green-ingredion-200);
         color: var(--color-green-ingredion);

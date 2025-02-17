@@ -17,20 +17,24 @@
         chart = am4core.create("chartdiv-score-countries", am4charts.XYChart);
 
         chart.data = [
-
-            { "pais": "Country 01", "facilities": 46, "perc": 8},
-            { "pais": "Country 02", "facilities": 28, "perc": 9 },
-            { "pais": "Country 03", "facilities": 70, "perc": 7 },
-            { "pais": "Country 04", "facilities": 46, "perc": 0 },
-            { "pais": "Country 05", "facilities": 99, "perc": 7 },
-            { "pais": "Country 06", "facilities": 37, "perc": 22},
-            { "pais": "Country 07", "facilities": 10, "perc": 32},
-            { "pais": "Country 08", "facilities": 54, "perc": 13},
-            { "pais": "Country 09", "facilities": 28, "perc": 9 },
-            { "pais": "Country 10", "facilities": 60, "perc": 7 },
-            { "pais": "Country 11", "facilities": 66, "perc": 12},
-            {"pais": "Country 12", "facilities": 46, "perc": 11},
+            { "pais": "United States", "facilities": 36, "perc": 68},
+            { "pais": "Brazil", "facilities": 35, "perc": 65 },
+            { "pais": "Canada", "facilities": 30, "perc":  68},
+            { "pais": "China", "facilities": 36, "perc": 61 },
+            { "pais": "Colombia", "facilities": 39, "perc": 64 },
+            { "pais": "Germany", "facilities": 27, "perc": 62},
+            { "pais": "India", "facilities": 30, "perc": 66},
+            { "pais": "Mexico", "facilities": 34, "perc": 67},
+            { "pais": "Pakistan", "facilities": 38, "perc": 63 },
+            { "pais": "Peru", "facilities": 30, "perc": 64 },
+            { "pais": "Malaysia", "facilities": 32, "perc": 68},
+            { "pais": "Thailand", "facilities": 36, "perc": 35},
         ];
+
+        // Ordenar os dados do gráfico do maior para o menor
+        chart.data.sort(function(a, b) {
+            return b.facilities - a.facilities;
+        });
 
         chart.logo.disabled = true;
         chart.padding(20, 0, 0, 0);
@@ -113,8 +117,10 @@
             lineSeries.dataFields.categoryX = "pais";
             lineSeries.stroke = am4core.color("#fcd626");
             lineSeries.strokeWidth = 2;
+            lineSeries.tensionX = 1;
             lineSeries.yAxis = yAxis2;
-
+            //lineSeries.strokeDasharray = "3,3";
+            lineSeries.tooltip.label.textAlign = "middle";
 
         var bullet = lineSeries.bullets.push(new am4charts.CircleBullet());
             bullet.circle.opacity = 1;
@@ -126,6 +132,7 @@
             lineLabel.label.text = "{valueY} %";
             lineLabel.label.fontSize = 12;
             lineLabel.label.verticalCenter = "bottom";
+        lineLabel.label.locationY = -0.5;
 
         // Após definir os dados do gráfico (Barra de rolagem)
         chart.events.on("datavalidated", function() {
