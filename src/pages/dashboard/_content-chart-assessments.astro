@@ -25,6 +25,12 @@
         chart.geodata = am4geodata_worldLow;
         chart.projection = new am4maps.projections.Miller();
 
+        // Adicionar controles de zoom
+        chart.zoomControl = new am4maps.ZoomControl();
+        chart.zoomControl.slider.height = 100; // Altura do slider de zoom
+        chart.zoomControl.minusButton.background.cornerRadius(0, 0, 0, 0); // Estilo do botão de zoom out
+        chart.zoomControl.plusButton.background.cornerRadius(0, 0, 0, 0); // Estilo do botão de zoom in
+
         var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
         polygonSeries.useGeodata = true;
         polygonSeries.mapPolygons.template.fill = am4core.color("#d3d3d3"); // Cinza claro
@@ -72,10 +78,10 @@
         var legendContainer = chart.createChild(am4core.Container);
         legendContainer.layout = "vertical";
         legendContainer.width = am4core.percent(15);
-        legendContainer.height = am4core.percent(20);
+        legendContainer.height = am4core.percent(35);
         legendContainer.align = "right";
         legendContainer.valign = "top";
-        legendContainer.marginRight = 0;
+        legendContainer.marginRight = -40;
         legendContainer.marginTop = 0;
         legendContainer.background.fill = am4core.color("#ffffff");
         legendContainer.background.fillOpacity = 0.9;
