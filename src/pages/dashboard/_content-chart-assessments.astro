@@ -1,10 +1,112 @@
+
+
 <div class="card">
     <div class="card-body">
         <div class="card-title">Assessments by Countries</div>
 
         <div class="overflow-auto-charts">
-            <div class="box-charts" id="chartdiv-assessments" style="height: 250px;"></div>
+            <div class="box-charts" id="chartdiv-assessments" style="height: 300px;"></div>
         </div>
     </div>
 </div>
+
+<script is:inline>
+    am4core.ready(function() {
+        am4core.useTheme(am4themes_animated);
+
+        var chart = am4core.create("chartdiv-assessments", am4maps.MapChart);
+
+        // Disable amChart Logo
+        if (chart.logo) {
+            chart.logo.disabled = true;
+        }
+        chart.padding(0);
+
+        chart.geodata = am4geodata_worldLow;
+        chart.projection = new am4maps.projections.Miller();
+
+        var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+        polygonSeries.useGeodata = true;
+        polygonSeries.mapPolygons.template.fill = am4core.color("#d3d3d3"); // Cinza claro
+
+        // Exclude Antartica
+        polygonSeries.exclude = ["AQ"];
+
+        var imageSeries = chart.series.push(new am4maps.MapImageSeries());
+        var imageTemplate = imageSeries.mapImages.template;
+
+        var circle = imageTemplate.createChild(am4core.Circle);
+        circle.radius = 8;
+        circle.stroke = am4core.color("#fff");
+        circle.strokeWidth = 1;
+        circle.nonScaling = true;
+        // Ativar tooltip nos círculos
+        circle.tooltipText = "{id}: {value}%";
+
+        imageSeries.data = [
+            { id: "USA", value: 75, latitude: 37.0902, longitude: -95.7129 },
+            { id: "Brasil", value: 65, latitude: -14.2350, longitude: -51.9253 },
+            { id: "Mexico", value: 55, latitude: 23.6345, longitude: -102.5528 },
+            { id: "Spain", value: 50, latitude: 40.4637, longitude: -3.7492 },
+            { id: "Japan", value: 30, latitude: 36.2048, longitude: 138.2529 },
+            { id: "South Korea", value: 70, latitude: 35.9078, longitude: 127.7669 }
+        ];
+
+        imageTemplate.propertyFields.latitude = "latitude";
+        imageTemplate.propertyFields.longitude = "longitude";
+        circle.propertyFields.fill = "color";
+
+        imageSeries.data.forEach(function(data) {
+            if (data.value >= 70) {
+                data.color = am4core.color("#4caf50"); // Verde
+            } else if (data.value >= 60) {
+                data.color = am4core.color("#ffeb3b"); // Amarelo
+            } else if (data.value >= 50) {
+                data.color = am4core.color("#ff9800"); // Laranja
+            } else {
+                data.color = am4core.color("#f44336"); // Vermelho
+            }
+        });
+
+        // Criando o container da legenda
+        var legendContainer = chart.createChild(am4core.Container);
+        legendContainer.layout = "vertical";
+        legendContainer.width = am4core.percent(15);
+        legendContainer.height = am4core.percent(20);
+        legendContainer.align = "right";
+        legendContainer.valign = "top";
+        legendContainer.marginRight = 0;
+        legendContainer.marginTop = 0;
+        legendContainer.background.fill = am4core.color("#ffffff");
+        legendContainer.background.fillOpacity = 0.9;
+        legendContainer.padding(10, 10, 10, 10);
+
+        // Dados da legenda
+        var legendData = [
+            { name: "0% - 49.9%", color: am4core.color("#f44336") },
+            { name: "50% - 59.9%", color: am4core.color("#ff9800") },
+            { name: "60% - 69.9%", color: am4core.color("#ffeb3b") },
+            { name: "70% - 100%", color: am4core.color("#4caf50") }
+        ];
+            // Criando os itens da legenda
+        legendData.forEach(item => {
+            var legendItem = legendContainer.createChild(am4core.Container);
+            legendItem.layout = "horizontal";
+            legendItem.marginBottom = 5;
+
+            var marker = legendItem.createChild(am4core.Circle);
+            marker.width = 15;
+            marker.height = 15;
+            marker.fill = item.color;
+            marker.valign = "top";
+            marker.marginTop = 0;
+            marker.marginRight = 10;
+
+            var label = legendItem.createChild(am4core.Label);
+            label.text = item.name;
+            label.fontSize = 12;
+
+        });
+    });
+</script>
 
