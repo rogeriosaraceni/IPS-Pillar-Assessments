@@ -1,0 +1,137 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Score by Countries</div>
+
+        <div class="overflow-auto-charts">
+            <div class="box-charts" id="chartdiv-score-countries" style="height: 450px;"></div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    let seriesArrayScoreCountries = []; // Array para armazenar as séries criadas (Barra de rolagem)
+
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        chart = am4core.create("chartdiv-score-countries", am4charts.XYChart);
+
+        chart.data = [
+
+            { "pais": "Country 01", "facilities": 46, "perc": 8},
+            { "pais": "Country 02", "facilities": 28, "perc": 9 },
+            { "pais": "Country 03", "facilities": 70, "perc": 7 },
+            { "pais": "Country 04", "facilities": 46, "perc": 0 },
+            { "pais": "Country 05", "facilities": 99, "perc": 7 },
+            { "pais": "Country 06", "facilities": 37, "perc": 22},
+            { "pais": "Country 07", "facilities": 10, "perc": 32},
+            { "pais": "Country 08", "facilities": 54, "perc": 13},
+            { "pais": "Country 09", "facilities": 28, "perc": 9 },
+            { "pais": "Country 10", "facilities": 60, "perc": 7 },
+            { "pais": "Country 11", "facilities": 66, "perc": 12},
+            {"pais": "Country 12", "facilities": 46, "perc": 11},
+        ];
+
+        chart.logo.disabled = true;
+        chart.padding(20, 0, 0, 0);
+        chart.legend = new am4charts.Legend();
+        chart.legend.fontSize = 12;
+
+        var markerTemplate = chart.legend.markers.template;
+        markerTemplate.width = 13;
+        markerTemplate.height = 13;
+
+        var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            xAxis.dataFields.category = "pais";
+            xAxis.renderer.cellStartLocation = 0.1;
+            xAxis.renderer.cellEndLocation = 0.9;
+            xAxis.renderer.grid.template.location = 0;
+            xAxis.renderer.grid.template.disabled = true;
+            xAxis.renderer.minGridDistance = 30; //força mostrar colunas (Barra de rolagem)
+            xAxis.renderer.fontSize = 12;
+            xAxis.renderer.labels.template.horizontalCenter = "right";
+            xAxis.renderer.labels.template.verticalCenter = "middle";
+            xAxis.renderer.labels.template.rotation = -75;
+
+        var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            yAxis.renderer.labels.template.disabled = true;
+            yAxis.renderer.grid.template.disabled = true;
+            yAxis.renderer.fontSize = 12;
+            yAxis.extraMax = 0.22;
+            yAxis.min = 0;
+            yAxis.restricMinMax = true;
+
+        var yAxis2 = chart.yAxes.push(new am4charts.ValueAxis());
+            yAxis2.renderer.labels.template.disabled = true;
+            yAxis2.renderer.grid.template.disabled = true;
+            yAxis2.renderer.opposite = true;
+
+        function createSeries(colorLine, colorFill, value, name) {
+            var series = chart.series.push(new am4charts.ColumnSeries());
+                series.showOnInit = false;
+                series.dataFields.valueY = value;
+                series.dataFields.categoryX = 'pais';
+                series.name = name;
+                //series.fill = colorFill;
+                //series.stroke = colorLine;
+                series.columns.template.tooltipText = '{valueY}';
+                series.columns.template.fill = am4core.color("rgba(108,179,62, 1)");
+                series.columns.template.strokeWidth = 0;
+                series.columns.template.column.cornerRadiusTopLeft = 10;
+                series.columns.template.column.cornerRadiusTopRight = 10;
+                series.columns.template.column.fillOpacity = 0.8;
+                series.columns.template.width = 55;
+                series.showTooltipOn = "hover";
+
+            var bullet = series.bullets.push(new am4charts.LabelBullet())
+                bullet.label.text = '{valueY}'
+                bullet.label.fill = am4core.color('#000')
+                bullet.label.verticalCenter = "bottom";
+                bullet.label.horizontalCenter = "top";
+                //bullet.label.rotation = -90;
+                bullet.dx = -7;
+                bullet.locationY = 0.2;
+                bullet.label.truncate = false;
+                bullet.label.fontSize = 12;
+
+            // Armazenar a série no array
+            seriesArrayScoreCountries.push(series);
+
+            return series;
+        }
+
+        createSeries(
+            am4core.color("rgba(9,139,128,1)"),
+            am4core.color("rgba(0,97,111,1)"),
+            "facilities",
+            "TT Facilities"
+        );
+
+        var lineSeries = chart.series.push(new am4charts.LineSeries());
+            lineSeries.name = "% Score";
+            lineSeries.dataFields.valueY = "perc";
+            lineSeries.dataFields.categoryX = "pais";
+            lineSeries.stroke = am4core.color("#fcd626");
+            lineSeries.strokeWidth = 2;
+            lineSeries.yAxis = yAxis2;
+
+
+        var bullet = lineSeries.bullets.push(new am4charts.CircleBullet());
+            bullet.circle.opacity = 1;
+            bullet.circle.fill = am4core.color("#fcd626");
+            bullet.circle.radius = 4;
+            bullet.circle.tooltipText = "{valueY} %";
+
+        var lineLabel = lineSeries.bullets.push(new am4charts.LabelBullet());
+            lineLabel.label.text = "{valueY} %";
+            lineLabel.label.fontSize = 12;
+            lineLabel.label.verticalCenter = "bottom";
+
+        // Após definir os dados do gráfico (Barra de rolagem)
+        chart.events.on("datavalidated", function() {
+            var chartWidth = chart.data.length * (seriesArrayScoreCountries[0].columns.template.width + xAxis.renderer.minGridDistance);
+            document.getElementById('chartdiv-score-countries').style.width = chartWidth + 'px';
+        });
+    });
+</script>
+

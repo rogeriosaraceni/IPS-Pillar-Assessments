@@ -5,6 +5,7 @@ import ContentChartAssessments from './_content-chart-assessments.astro';
 import ContentChartCompletion from './_content-chart-completion.astro';
 import ContentChartScore from './_content-chart-score.astro';
 import ContentChartPillar from './_content-chart-pillar.astro';
+import ContentChartScoreCountries  from './_content-chart-score-countries.astro';
 ---
 
 <script is:inline>
@@ -39,5 +40,11 @@ import ContentChartPillar from './_content-chart-pillar.astro';
 
     <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
         <ContentChartPillar />
+    </div>
+</section>
+
+<section class="row slide-in-left">
+    <div class="col-12">
+        <ContentChartScoreCountries />
     </div>
 </section>
