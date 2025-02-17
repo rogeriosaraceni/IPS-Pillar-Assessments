@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">By Pillar</div>
+
+        <div class="overflow-auto-charts">
+            <div class="box-charts" id="chartdiv-pillar" style="height: 290px;"></div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
+
+        var chart = am4core.create("chartdiv-pillar", am4charts.RadarChart);
+
+        // Disable amChart Logo
+        if (chart.logo) {
+            chart.logo.disabled = true;
+        }
+        chart.padding(20, 10, 10, 10);
+
+        chart.data = [
+            {
+                categoria: "Safety",
+                pontuacao: 90
+            },
+            {
+                categoria: "Reliability",
+                pontuacao: 70
+            },
+            {
+                categoria: "Management",
+                pontuacao: 100
+            },
+            {
+                categoria: "People",
+                pontuacao: 60
+            },
+            {
+                categoria: "Quality",
+                pontuacao: 40
+            },
+        ];
+
+        /* Create axes */
+        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "categoria";
+
+        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.min = 0;
+        valueAxis.max = 108;
+        valueAxis.strictMinMax = true;
+        valueAxis.renderer.minGridDistance = 11;
+        valueAxis.renderer.axisFills.template.fill = chart.colors.getIndex(2);
+        valueAxis.renderer.axisFills.template.fillOpacity = 0.05;
+        valueAxis.renderer.labels.template.disabled = true;
+
+        /* Create and configure series */
+        var series = chart.series.push(new am4charts.RadarSeries());
+        series.dataFields.valueY = "pontuacao";
+        series.dataFields.categoryX = "categoria";
+        series.name = "Percentage Achieved";
+        series.strokeWidth = 2;
+        series.fillOpacity = 0.2;
+
+        var bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.interactionsEnabled = false;
+        bullet.fontSize = 11;
+        bullet.label.text = "{valueY}%";
+        bullet.label.fill = am4core.color("#000");
+
+        chart.legend = new am4charts.Legend();
+    });
+</script>

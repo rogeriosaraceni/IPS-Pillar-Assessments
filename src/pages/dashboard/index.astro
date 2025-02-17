@@ -1,7 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import ContentBoxs from './_content-boxs.astro';
-import ContentCharts from './_content-charts.astro';
+import ContentMain from './_content-main.astro'
 ---
 
 <Layout>
@@ -9,6 +8,23 @@ import ContentCharts from './_content-charts.astro';
         <span class="title">Dashboard</span>
     </div>
 
-    <ContentBoxs />
-    <ContentCharts />
+    <ContentMain />
 </Layout>
+
+<style is:inline>
+    .badge{
+        background: #f1e9e9;
+    }
+
+    .illustration {
+        background-color: var(--color-green-ingredion-200);
+        color: var(--color-green-ingredion);
+    }
+    .illustration-text {
+        color: var(--color-green-ingredion);
+    }
+    .illustration-img {
+        max-width: 220px;
+        width: 100%;
+    }
+</style>

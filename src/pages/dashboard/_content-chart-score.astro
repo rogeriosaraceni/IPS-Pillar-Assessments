@@ -1,20 +1,14 @@
-<div class="row slide-in-right">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title">Score</div>
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Score</div>
 
-                <div class="overflow-auto-charts">
-                    <div class="box-charts" id="chartdiv-score" style="height: 350px;"></div>
-                </div>
-            </div>
+        <div class="overflow-auto-charts">
+            <div class="box-charts" id="chartdiv-score" style="height: 290px;"></div>
         </div>
     </div>
 </div>
 
 <script is:inline>
-    const amchartsTextFill = "#999"
-
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
@@ -61,7 +55,7 @@
         categoryAxis.renderer.labels.template.maxWidth = 320; // Limitar a largura máxima dos rótulos
         categoryAxis.renderer.labels.template.wrap = true; // Ativar quebra automática de linha
         categoryAxis.renderer.labels.template.lineHeight = 0.8; // Ajustar a altura da linha
-        categoryAxis.renderer.labels.template.fill = am4core.color(amchartsTextFill);
+        //categoryAxis.renderer.labels.template.fill = am4core.color(amchartsTextFill);
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.grid.template.disabled = true;
@@ -75,7 +69,7 @@
         series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}";
         series.columns.template.fillOpacity = 0.8;
         series.columns.template.strokeWidth = 0;
-        series.columns.template.fill = am4core.color("rgba(108,179,62, 0.8)");
+        series.columns.template.fill = am4core.color("rgba(108,179,62, 1)");
 
         series.columns.template.column.cornerRadiusTopLeft = 10;
         series.columns.template.column.cornerRadiusTopRight = 10;
@@ -87,7 +81,7 @@
         bullet.dy = -5;
         bullet.fontSize = 11;
         bullet.label.text = "{valueY}";
-        bullet.label.fill = am4core.color(amchartsTextFill);
+        //bullet.label.fill = am4core.color(amchartsTextFill);
 
         //colors
         // series.columns.template.adapter.add("fill", function (fill, target) {

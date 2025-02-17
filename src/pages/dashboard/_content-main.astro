@@ -1,0 +1,43 @@
+---
+import ContentBoxWelcome from './_content-box-welcome.astro';
+import ContentBoxTotalUsers from './_content-box-total-users.astro';
+import ContentChartAssessments from './_content-chart-assessments.astro';
+import ContentChartCompletion from './_content-chart-completion.astro';
+import ContentChartScore from './_content-chart-score.astro';
+import ContentChartPillar from './_content-chart-pillar.astro';
+---
+
+<script is:inline>
+    const amchartsTextFill = "#999"
+</script>
+
+<section class="row slide-in-left">
+    <div class="col-xxl-4 col-xl-3 col-lg-3 col-md-3 col-sm-6 d-flex flex-column">
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex flex-fill">
+            <ContentBoxWelcome />
+        </div>
+
+        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex flex-fill">
+            <ContentBoxTotalUsers />
+        </div>
+    </div>
+
+
+    <div class="col-xxl-8 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <ContentChartAssessments />
+    </div>
+</section>
+
+<section class="row slide-in-left">
+    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <ContentChartCompletion />
+    </div>
+
+    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <ContentChartScore />
+    </div>
+
+    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12">
+        <ContentChartPillar />
+    </div>
+</section>
