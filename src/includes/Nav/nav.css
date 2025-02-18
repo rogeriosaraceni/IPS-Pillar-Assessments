@@ -7,13 +7,16 @@
     border-bottom: 0;
     box-shadow: 0 0 2rem 0 rgba(41, 48, 66, .1);
 }
-
-.navbarApp .avatar{
-    max-width: 100%;
-    width: 36px;
-    height: 36px;
-    aspect-ratio: auto 36 / 36;
-    border-radius: 50% !important;
+/* --------------------------------------------------------------------
+* - dropdown-item focus / active
+---------------------------------------------------------------------- */
+.navbarApp .dropdown-item:focus,
+.navbarApp .dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.navbarApp .dropdown-item.active{
+    color: #fff;
+    background: var(--color-green-ingredion)
 }
 
 /* --------------------------------------------------------------------
@@ -57,11 +60,12 @@
 .btnToogleSidebar:hover .hamburger,
 .btnToogleSidebar:hover .hamburger:after,
 .btnToogleSidebar:hover .hamburger::before{
-    background: orange;
+    background-color: var(--color-green-ingredion)
 }
 
-.nav-theme-user{ flex-direction: row!important;}
-
+/* --------------------------------------------------------------------
+* - nav-theme-user
+---------------------------------------------------------------------- */
 .nav-theme-user{
     flex-direction: row!important;
 }
@@ -73,18 +77,41 @@
     .nav-theme-user .data-user {
         display: none!important;
     }
-
     .nav-theme-user .data-user-mobile{
         display: block;
     }
 }
 
-.dropdown-item:focus,
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.12);
+/* --------------------------------------------------------------------
+* - dropdown-nav-flag
+---------------------------------------------------------------------- */
+.dropdown-nav-flag{
+    padding-top: 0.45rem;
+    margin-right: 0.2rem;
+}
+.dropdown-nav-flag img {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.dropdown-nav-flag .dropdown-item{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.dropdown-item.active{
-    color: #fff;
-    background: var(--color-green-ingredion)
+/* --------------------------------------------------------------------
+* - avatar
+---------------------------------------------------------------------- */
+.navbarApp .avatar{
+    max-width: 100%;
+    width: 36px;
+    height: 36px;
+    aspect-ratio: auto 36 / 36;
+    border-radius: 50% !important;
+}
+
+.dropdown-toggle.dropdown-toggle-animation.no-arrow::after {
+    display: none;
 }

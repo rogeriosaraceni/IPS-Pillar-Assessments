@@ -1,0 +1,126 @@
+---
+const btnsLanguage =[
+    {
+        active: "active",
+        imgSrc: "united-states-of-america.svg",
+        country: "United States"
+    },
+    {
+        active: "",
+        imgSrc: "brazil.svg",
+        country: "Brazil"
+    },
+    {
+        active: "",
+        imgSrc: "canada.svg",
+        country: "Canada"
+    },
+    {
+        active: "",
+        imgSrc: "china.svg",
+        country: "China"
+    },
+    {
+        active: "",
+        imgSrc: "colombia.svg",
+        country: "Colombia"
+    },
+    {
+        active: "",
+        imgSrc: "germany.svg",
+        country: "Germany"
+    },
+    {
+        active: "",
+        imgSrc: "india.svg",
+        country: "India"
+    },
+    {
+        active: "",
+        imgSrc: "mexico.svg",
+        country: "Mexico"
+    },
+    {
+        active: "",
+        imgSrc: "pakistan.svg",
+        country: "Pakistan"
+    },
+    {
+        active: "",
+        imgSrc: "peru.svg",
+        country: "Peru"
+    },
+    {
+        active: "",
+        imgSrc: "malaysia.svg",
+        country: "Malaysia"
+    },
+    {
+        active: "",
+        imgSrc: "thailand.svg",
+        country: "Thailand"
+    }
+]
+---
+
+<li class="nav-item dropdown dropdown-nav-flag">
+    <button
+        class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-animation no-arrow gap-1 px-1"
+        aria-label="language"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        data-btn="language"
+    >
+        <img src="/assets/images/flags/united-states-of-america.svg" alt="">
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end overflow-hidden border-0 py-0 shadow">
+        {
+            btnsLanguage.map((item) => (
+                <li>
+                    <button type="button" class={`dropdown-item ${item.active}`} data-item="language">
+                        <img src={`/assets/images/flags/${item.imgSrc}`} alt={item.country}>
+                        <small>{item.country}</small>
+                    </button>
+                </li>
+            ))
+        }
+    </ul>
+</li>
+
+<script is:inline>
+    function initLanguageDropdown() {
+        const dropdownButton = document.querySelector('[data-btn="language"]');
+        const dropdownItems  = document.querySelectorAll('[data-item="language"]');
+
+        if (!dropdownButton || dropdownItems.length === 0) return;
+
+        function updateButton(item) {
+            const imgSrc = item.querySelector("img").src;
+            const languageName = item.querySelector("small").textContent.trim();
+
+            dropdownButton.querySelector("img").src = imgSrc;
+            dropdownButton.setAttribute("aria-label", languageName);
+        }
+
+        const activeItem = document.querySelector('[data-item="language"].active');
+        if (activeItem) {
+            updateButton(activeItem);
+        } else {
+            dropdownItems[0].classList.add("active");
+            updateButton(dropdownItems[0]);
+        }
+
+        dropdownItems.forEach(item => {
+            item.addEventListener("click", function () {
+                dropdownItems.forEach(i => i.classList.remove("active"));
+                this.classList.add("active");
+
+                updateButton(this);
+            });
+        });
+    }
+    // Chama a função quando o DOM estiver pronto
+    document.addEventListener("DOMContentLoaded", initLanguageDropdown);
+</script>

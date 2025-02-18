@@ -33,7 +33,7 @@
 	setTheme(getPreferredTheme());
 
 	const showActiveTheme = (theme) => {
-		const activeThemeIcon = document.querySelector( ".theme-icon-active use");
+		const activeThemeIcon = document.querySelector(".theme-icon-active use");
 		const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
 		const svgOfActiveBtn = btnToActive
 			?.querySelector("svg use")
