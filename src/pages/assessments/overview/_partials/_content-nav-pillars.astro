@@ -1,0 +1,104 @@
+---
+const btnsPillars = [
+{
+        link: "../safety/",
+        name: "Safety",
+    },
+    {
+        link: "../quality/",
+        name: "Quality",
+    },
+    {
+        link: "../people/",
+        name: "People",
+    },
+    {
+        link: "../management/",
+        name: "Safety",
+    },
+    {
+        link: "../reliability/",
+        name: "Reliability",
+    },
+]
+---
+
+<style>
+    /* --------------------------------------------------------------------
+    nav-pills-app
+    ---------------------------------------------------------------------- */
+    .nav-pills-app .nav-item{
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-pills-app .nav-link{
+        padding: 0.25rem 0.5rem;
+        width: 100%;
+        color: #000;
+        border: 1px solid var(--bs-border-color);
+        background-color: #f8f8f8;
+        transition: all 0.3s;
+        font-size: 0.85rem;
+    }
+    .nav-pills-app .nav-link:hover{
+        color: #000;
+        background-color: #efefef;
+    }
+
+    .nav-pills.nav-pills-app .nav-link.active,
+    .nav-pills.nav-pills-app .show>.nav-link,
+    .nav-pills.nav-pills-app .nav-link.active:hover,
+    .nav-pills.nav-pills-app .show>.nav-link:hover {
+        color: #fff;
+        background-color: var(--color-green-ingredion)!important;
+    }
+</style>
+
+<div class="card">
+    <div class="card-body">
+        <section class="wrapper-sticky-tabs">
+            <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+                {
+                    btnsPillars.map((pillar) => (
+                        <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <a class="nav-link" href={pillar.link}>
+                                {pillar.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </div>
+</div>
+
+<!--
+<script is:inline>
+    function navLinkTabsActive() {
+        const currentUrl = window.location.pathname
+        console.log(currentUrl);
+
+        const navLinks = $(`#pills-tab a[href="${currentUrl}"]`)
+
+        if (navLinks) {
+            navLinks.addClass('active')
+        }
+    }
+    navLinkTabsActive()
+</script>
+-->
+
+<script is:inline>
+    function navLinkTabsActive() {
+        const currentUrl = window.location.pathname;
+
+        $("#pills-tab a").each(function () {
+            const linkPath = new URL(this.href, window.location.origin).pathname;
+
+            if (currentUrl === linkPath) {
+                $(this).addClass("active");
+            }
+        });
+    }
+    navLinkTabsActive()
+</script>

@@ -45,6 +45,24 @@ $('.navSidebarApp .sub-menu li.active').parents('.nav-item').addClass('active');
 $('.navSidebarApp .sub-menu li.active').parents('.collapse').addClass('show');
 $('.navSidebarApp .sub-menu li.active').parents('.collapse').next('.dropdown').attr("aria-expanded", "true")
 
+
+
+// 🔥 Forçar "Overview" e "Assessments" a ficarem ativos se a URL contiver 'overview'
+if (currentUrl.includes('overview')) {
+
+    // Ativa o link "Overview"
+    $('.navSidebarApp a[href*="overview"]').parent('li').addClass('active');
+
+    // Ativa o menu pai "Assessments"
+    $('.navSidebarApp a[href*="overview"]').closest('.collapse').addClass('show');
+    $('.navSidebarApp a[href*="overview"]').closest('.collapse').prev('.dropdown').attr("aria-expanded", "true");
+    $('.navSidebarApp a[href*="overview"]').closest('.nav-item').addClass('active');
+
+    // 🔥 Ativa a li principal "Assessments" manualmente
+    $('#navCollapseAssessments').addClass('show'); // Mantém o submenu aberto
+    $('a[href="#navCollapseAssessments"]').attr("aria-expanded", "true").parent('li').addClass('active');
+}
+
 /*! --------------------------------------------------------------------
 * PerfectScrollbar
 * --------------------------------------------------------------------*/
