@@ -130,6 +130,19 @@ title-breadcrumb
 .title-breadcrumb .breadcrumb .active{ color: #6cb33e;}
 
 /* --------------------------------------------------------------------
+card-title
+---------------------------------------------------------------------- */
+.card-title{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--bs-border-color);
+    padding-bottom: 0.25rem;
+}
+
+/* --------------------------------------------------------------------
 * - popover-app
 ---------------------------------------------------------------------- */
 .popover-app-modelo{
