@@ -4,9 +4,6 @@
     justify-content: space-between;
     gap: 0.5rem;
 }
-.wrapper-btns .btn{
-    position: relative;
-}
 .wrapper-btns .btns-middle{
     display: flex;
     flex-wrap: wrap;
@@ -20,6 +17,10 @@
     gap: 0.25rem;
 }
 @media(max-width: 1200px){
+    .wrapper-btns .btns-middle {
+        width: 100%;
+        justify-content: start;
+    }
     .wrapper-btns .btns-end{
         flex: 1;
     }
