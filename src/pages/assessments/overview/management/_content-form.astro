@@ -6,6 +6,21 @@
     .table.table-pillar>tfoot>tr>th {
         font-size: 0.75rem;
     }
+
+
+    .title-accordion{
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.25rem 0;
+        cursor: pointer;
+        font-size: 0.85rem;
+    }
+    .title-accordion .icon{
+        transition: transform 0.2s ease-in-out;
+    }
+    .title-accordion.show .icon{
+        transform: rotate(180deg);
+    }
 </style>
 
 <div class="card">
@@ -40,8 +55,13 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td colspan="3" class="text-start">Strategy and Business Cycle</td>
+                    <tr data-tr="parent">
+                        <td colspan="3" class="text-start">
+                            <div class="title-accordion" data-title="accordion">
+                                <i class="bi bi-chevron-down icon"></i>
+                                <span>Strategy and Business Cycle</span>
+                            </div>
+                        </td>
                         <td>19%</td>
                         <td>0%</td>
                         <td>0%</td>
@@ -62,7 +82,7 @@
                         <td>12,7%</td>
                     </tr>
 
-                    <tr>
+                    <tr data-tr="child">
                         <td>Strategic planning and definition of goals</td>
                         <td>Were the goals clearly rationale defined?</td>
                         <td class="text-start">
@@ -287,3 +307,14 @@
         </section>
     </div>
 </div>
+
+<script is:inline>
+    $('[data-tr="child"]').hide()
+    function trAccordion() {
+        $('[data-tr="parent"]').on('click', function(){
+            $('[data-title="accordion"]').toggleClass('show')
+            $('[data-tr="child"]').toggle('fast')
+        })
+    }
+    trAccordion()
+</script>
