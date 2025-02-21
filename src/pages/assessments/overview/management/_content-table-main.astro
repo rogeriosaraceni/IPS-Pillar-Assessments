@@ -1,0 +1,122 @@
+---
+import ContentModal from "./_content-modal.astro";
+import Row1 from "./_row1.astro"
+import Row2 from "./_row2.astro"
+---
+
+<style is:global>
+    .table.table-pillar {
+        font-size: 0.75rem;
+    }
+    .table.table-pillar > thead > tr > th,
+    .table.table-pillar > tfoot > tr > th {
+        font-size: 0.75rem;
+    }
+
+    [data-tr="parent"] td {
+        background-color: var(--color-green-ingredion-200);
+    }
+
+    .title-accordion {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.25rem 0;
+        cursor: pointer;
+        font-size: 0.85rem;
+    }
+    .title-accordion .icon {
+        transform: rotate(-180deg);
+        transition: transform 0.2s ease-in-out;
+    }
+    .title-accordion.show .icon {
+        transform: rotate(0deg);
+    }
+
+    .select-pillar{
+        text-align: center;
+        padding-right: 0.8rem;
+    }
+</style>
+
+<div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between gap-2">
+            <button
+                type="button"
+                id="toggle-all"
+                class="btn btn-small btn-secondary mb-1 d-flex align-items-center gap-1"
+            >
+                <i class="bi bi-layers lh-1"></i>
+                <small>Open/Close All</small>
+            </button>
+
+            <div class="d-flex justify-content-end gap-2">
+                <a class="btn btn-small btn-success mb-1" href="#">Export Pillar to Excel</a>
+                <button type="submit" class="btn btn-small btn-primary py-0 mb-1">Save</button>
+            </div>
+        </div>
+
+        <section class="table-responsive mb-3">
+            <table class="table table-bordered table-hover table-fixed text-center table-pillar fixedTable" id="tableHeadColFixer">
+                <thead>
+                    <tr>
+                        <th style="width: 200px;">Book</th>
+                        <th style="width: 200px;">Question</th>
+                        <th style="width: 100px;">Options</th>
+                        <th style="width: 100px;">Safety</th>
+                        <th style="width: 100px;" >Environment &amp; Sustainability</th>
+                        <th style="width: 100px;">Quality</th>
+                        <th style="width: 100px;">Human Resources</th>
+                        <th style="width: 100px;">Wet Mill / Grind</th>
+                        <th style="width: 100px;">FOS</th>
+                        <th style="width: 100px;">Oil Refinery</th>
+                        <th style="width: 100px;">Starch</th>
+                        <th style="width: 100px;">Dextrose</th>
+                        <th style="width: 100px;">Refinery / Sweetener Refinery</th>
+                        <th style="width: 100px;">Packaging</th>
+                        <th style="width: 100px;">Utilities</th>
+                        <th style="width: 100px;">Project Engineering</th>
+                        <th style="width: 100px;">Maintenance &amp; Reliability</th>
+                        <th style="width: 100px;">Contractors</th>
+                        <th style="width: 100px;">Plant Management</th>
+                        <th style="width: 100px;">Logistics</th>
+                        <th style="width: 100px;">Plant</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <Row1 />
+                    <Row2 />
+                </tbody>
+            </table>
+        </section>
+
+        <div class="d-flex justify-content-center gap-2">
+            <a class="btn btn-small btn-success" href="#">Import Evaluation from Excel</a>
+            <a class="btn btn-small btn-secondary" href="#">Evaluation Copy Previous Month</a>
+        </div>
+    </div>
+</div>
+
+<ContentModal />
+
+<script is:inline>
+    $('[data-tr="parent"]').on("click", function () {
+        $(this).nextUntil('[data-tr="parent"]').filter('[data-tr="child"]').toggle("fast");
+        $(this).find('[data-title="accordion"]').toggleClass("show");
+    });
+
+    $("#toggle-all").on("click", function () {
+        const childRowsAll = $('[data-tr="child"]');
+        const isVisible = childRowsAll.is(":visible");
+        if (isVisible) {
+            childRowsAll.hide("fast");
+        } else {
+            childRowsAll.show("fast");
+        }
+        $('[data-title="accordion"]').toggleClass("show", !isVisible);
+    });
+
+    $("#tableHeadColFixer").tableHeadFixer({"head" : false, "left" : 3});
+</script>
+

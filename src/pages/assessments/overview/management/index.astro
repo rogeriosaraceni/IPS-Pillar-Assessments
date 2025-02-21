@@ -3,12 +3,66 @@ import Layout from '@layouts/Layout.astro';
 import ContentTitle from '../_partials/_content-title.astro';
 import ContentFilter from '../_partials/_content-filter.astro';
 import ContentNavPillars from '../_partials/_content-nav-pillars.astro';
-import ContentForm from './_content-form.astro';
+import ContentTableMain from './_content-table-main.astro';
 ---
 
 <Layout>
     <ContentTitle />
     <ContentFilter />
     <ContentNavPillars />
-    <ContentForm />
+    <ContentTableMain />
 </Layout>
+
+
+<tr data-tr="parent">
+    <td colspan="3" class="text-start">
+        <div class="title-accordion" data-title="accordion">
+            <i class="bi bi-chevron-down icon"></i>
+            <span>Table 1</span>
+        </div>
+    </td>
+    <td>19%</td>
+</tr>
+<tr data-tr="child">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tr>
+<tr data-tr="child">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tr>
+
+
+<tr data-tr="parent">
+    <td colspan="3" class="text-start">
+        <div class="title-accordion" data-title="accordion">
+            <i class="bi bi-chevron-down icon"></i>
+            <span>Table 2</span>
+        </div>
+    </td>
+    <td>19%</td>
+</tr>
+<tr data-tr="child">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tr>
+<tr data-tr="child">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tr>
