@@ -58,3 +58,11 @@
     text-align: center;
     padding-right: 0.8rem;
 }
+
+
+[data-tr="parent"] td.selected-value-0 { background-color: #f8696b; }
+[data-tr="parent"] td.selected-value-1 { background-color: #f1bb55; }
+[data-tr="parent"] td.selected-value-2 { background-color: #e8e583; }
+[data-tr="parent"] td.selected-value-3 { background-color: #96d996; }
+[data-tr="parent"] td.selected-value-4 { background-color: #63be7b; }
+[data-tr="parent"] td.selected-value-na{ background-color: #d0cece; }

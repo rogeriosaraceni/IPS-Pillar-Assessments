@@ -15,3 +15,18 @@ $("#toggle-all").on("click", function () {
 });
 
 $("#tableHeadColFixer").tableHeadFixer({"head" : true, "left" : 3});
+
+function applySelectedClass(select) {
+    const selectId = $(select).data('select')
+    const tdTarget = $(`td[data-target="${selectId}"]`)
+
+    tdTarget.removeClass(function(index, className) {
+        return (className.match(/\bselected-value-\S+/g) || []).join(' ')
+    })
+    if (select.value !== "") {
+        tdTarget.addClass(`selected-value-${select.value}`)
+    }
+}
+
+$('.select-pillar').each(function() { applySelectedClass(this)})
+$('.select-pillar').on('change', function() { applySelectedClass(this)})

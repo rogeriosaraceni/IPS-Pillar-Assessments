@@ -252,29 +252,3 @@
         <span></span>
     </td>
 </tr>
-
-<style>
-    [data-tr="parent"] td.selected-value-0 { background-color: #f8696b; }
-    [data-tr="parent"] td.selected-value-1 { background-color: #f1bb55; }
-    [data-tr="parent"] td.selected-value-2 { background-color: #e8e583; }
-    [data-tr="parent"] td.selected-value-3 { background-color: #96d996; }
-    [data-tr="parent"] td.selected-value-4 { background-color: #63be7b; }
-    [data-tr="parent"] td.selected-value-na{ background-color: #d0cece; }
-</style>
-
-<script is:inline>
-    function applySelectedClass(select) {
-        const selectId = $(select).data('select')
-        const tdTarget = $(`td[data-target="${selectId}"]`)
-
-        tdTarget.removeClass(function(index, className) {
-            return (className.match(/\bselected-value-\S+/g) || []).join(' ')
-        })
-        if (select.value !== "") {
-            tdTarget.addClass(`selected-value-${select.value}`)
-        }
-    }
-
-    $('.select-pillar').each(function() { applySelectedClass(this)})
-    $('.select-pillar').on('change', function() { applySelectedClass(this)})
-</script>
