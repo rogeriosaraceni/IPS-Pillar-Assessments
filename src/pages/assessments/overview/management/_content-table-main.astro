@@ -5,6 +5,24 @@ import Row2 from "./_row2.astro"
 ---
 
 <style is:global>
+    .wrapper-btns{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+    .wrapper-btns .btns-middle{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+    @media(max-width: 1200px){
+        .wrapper-btns{
+
+        }
+    }
+
     .table.table-pillar {
         font-size: 0.75rem;
     }
@@ -40,7 +58,7 @@ import Row2 from "./_row2.astro"
 
 <div class="card">
     <div class="card-body">
-        <div class="d-flex justify-content-between gap-2">
+        <div class="wrapper-btns">
             <button
                 type="button"
                 id="toggle-all"
@@ -49,6 +67,11 @@ import Row2 from "./_row2.astro"
                 <i class="bi bi-layers lh-1"></i>
                 <small>Open/Close All</small>
             </button>
+
+            <div class="btns-middle">
+                <a class="btn btn-small btn-success mb-1" href="#">Import Evaluation from Excel</a>
+                <a class="btn btn-small btn-secondary mb-1" href="#">Evaluation Copy Previous Month</a>
+            </div>
 
             <div class="d-flex justify-content-end gap-2">
                 <a class="btn btn-small btn-success mb-1" href="#">Export Pillar to Excel</a>
@@ -90,11 +113,6 @@ import Row2 from "./_row2.astro"
                 </tbody>
             </table>
         </section>
-
-        <div class="d-flex justify-content-center gap-2">
-            <a class="btn btn-small btn-success" href="#">Import Evaluation from Excel</a>
-            <a class="btn btn-small btn-secondary" href="#">Evaluation Copy Previous Month</a>
-        </div>
     </div>
 </div>
 
