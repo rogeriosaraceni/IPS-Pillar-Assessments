@@ -1,0 +1,59 @@
+.wrapper-btns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.wrapper-btns .btn{
+    position: relative;
+}
+.wrapper-btns .btns-middle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+}
+.wrapper-btns .btns-end{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 0.25rem;
+}
+@media(max-width: 1200px){
+    .wrapper-btns .btns-end{
+        flex: 1;
+    }
+}
+
+
+.table.table-pillar {
+    font-size: 0.75rem;
+}
+.table.table-pillar > thead > tr > th,
+.table.table-pillar > tfoot > tr > th {
+    font-size: 0.75rem;
+}
+
+[data-tr="parent"] td {
+    background-color: var(--color-green-ingredion-200);
+}
+
+.title-accordion {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.title-accordion .icon {
+    transform: rotate(-180deg);
+    transition: transform 0.2s ease-in-out;
+}
+.title-accordion.show .icon {
+    transform: rotate(0deg);
+}
+
+.select-pillar{
+    text-align: center;
+    padding-right: 0.8rem;
+}

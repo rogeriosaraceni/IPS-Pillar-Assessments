@@ -4,6 +4,8 @@ import ContentTitle from '../_partials/_content-title.astro';
 import ContentFilter from '../_partials/_content-filter.astro';
 import ContentNavPillars from '../_partials/_content-nav-pillars.astro';
 import ContentTableMain from './_content-table-main.astro';
+
+import '../_assets/styles.css'
 ---
 
 <Layout>
@@ -13,56 +15,4 @@ import ContentTableMain from './_content-table-main.astro';
     <ContentTableMain />
 </Layout>
 
-
-<tr data-tr="parent">
-    <td colspan="3" class="text-start">
-        <div class="title-accordion" data-title="accordion">
-            <i class="bi bi-chevron-down icon"></i>
-            <span>Table 1</span>
-        </div>
-    </td>
-    <td>19%</td>
-</tr>
-<tr data-tr="child">
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tr>
-<tr data-tr="child">
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tr>
-
-
-<tr data-tr="parent">
-    <td colspan="3" class="text-start">
-        <div class="title-accordion" data-title="accordion">
-            <i class="bi bi-chevron-down icon"></i>
-            <span>Table 2</span>
-        </div>
-    </td>
-    <td>19%</td>
-</tr>
-<tr data-tr="child">
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tr>
-<tr data-tr="child">
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</tr>
+<script src="../_assets/scripts.js"></script>
