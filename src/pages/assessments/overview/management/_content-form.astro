@@ -43,11 +43,14 @@ import ContentModal from "./_content-modal.astro";
                 <small>Open/Close All</small>
             </button>
 
-            <button type="submit" class="btn btn-small btn-primary py-0 mb-1">Save</button>
+            <div class="d-flex justify-content-end gap-2">
+                <a class="btn btn-small btn-success mb-1" href="#">Export Pillar to Excel</a>
+                <button type="submit" class="btn btn-small btn-primary py-0 mb-1">Save</button>
+            </div>
         </div>
 
-        <section class="table-responsive">
-            <table class="table table-bordered table-hover table-fixed text-center table-pillar" id="tableHeadColFixer">
+        <section class="table-responsive mb-3">
+            <table class="table table-bordered table-hover table-fixed text-center table-pillar fixedTable" id="tableHeadColFixer">
                 <thead>
                     <tr>
                         <th style="width: 200px;">Book</th>
@@ -328,8 +331,9 @@ import ContentModal from "./_content-modal.astro";
             </table>
         </section>
 
-        <div class="d-flex justify-content-end gap-2">
-            <button type="submit" class="btn btn-primary">Save</button>
+        <div class="d-flex justify-content-center gap-2">
+            <a class="btn btn-small btn-success" href="#">Import Evaluation from Excel</a>
+            <a class="btn btn-small btn-secondary" href="#">Evaluation Copy Previous Month</a>
         </div>
     </div>
 </div>
@@ -360,8 +364,9 @@ import ContentModal from "./_content-modal.astro";
 
 <style>
     .table.fixedTable{
-        border-spacing: 0;
+        /* border-spacing: 0; */
         /* border-collapse: separate; */
+
     }
 </style>
 
