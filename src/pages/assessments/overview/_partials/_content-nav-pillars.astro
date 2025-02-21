@@ -2,22 +2,27 @@
 const btnsPillars = [
 {
         link: "../safety/",
+        icon: "bi bi-shield-check icon",
         name: "Safety",
     },
     {
         link: "../quality/",
+        icon: "bi bi-award icon",
         name: "Quality",
     },
     {
         link: "../people/",
+        icon: "bi bi-person-check icon",
         name: "People",
     },
     {
         link: "../management/",
-        name: "Safety",
+        icon: "bi bi-gear icon",
+        name: "Management",
     },
     {
         link: "../reliability/",
+        icon: "bi bi-shield icon",
         name: "Reliability",
     },
 ]
@@ -27,8 +32,14 @@ const btnsPillars = [
     /* --------------------------------------------------------------------
     nav-pills-app
     ---------------------------------------------------------------------- */
+    .nav-pills-app{
+        gap: 0.25rem
+    }
     .nav-pills-app .nav-item{
         margin-bottom: 0.25rem;
+    }
+    .nav-pills-app .nav-item .icon{
+        font-size: 1rem;
     }
 
     .nav-pills-app .nav-link{
@@ -42,7 +53,7 @@ const btnsPillars = [
     }
     .nav-pills-app .nav-link:hover{
         color: #000;
-        background-color: #efefef;
+        background-color: var(--color-green-ingredion-200);
     }
 
     .nav-pills.nav-pills-app .nav-link.active,
@@ -50,18 +61,19 @@ const btnsPillars = [
     .nav-pills.nav-pills-app .nav-link.active:hover,
     .nav-pills.nav-pills-app .show>.nav-link:hover {
         color: #fff;
-        background-color: var(--color-green-ingredion)!important;
+        background-color: var(--color-purple-ingredion)!important;
     }
 </style>
 
 <div class="card">
     <div class="card-body">
         <section class="wrapper-sticky-tabs">
-            <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+            <ul class="nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
                 {
                     btnsPillars.map((pillar) => (
-                        <li class="nav-item col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                        <li class="nav-item">
                             <a class="nav-link" href={pillar.link}>
+                                <i class={pillar.icon}></i>
                                 {pillar.name}
                             </a>
                         </li>
