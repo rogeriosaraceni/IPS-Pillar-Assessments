@@ -74,14 +74,14 @@ initFancybox()
 /** --------------------------------------------------------------------
  * data-row="delete"
 --------------------------------------------------------------------- */
-function initDeleteRow() {
-    $('[data-row="delete"]').on('click', function () {
-        if (!confirm("Você tem certeza que deseja excluir?")) {
-            return false;
-        }
-    });
-}
-initDeleteRow()
+// function initDeleteRow() {
+//     $('[data-row="delete"]').on('click', function () {
+//         if (!confirm("Você tem certeza que deseja excluir?")) {
+//             return false;
+//         }
+//     });
+// }
+// initDeleteRow()
 
 /** --------------------------------------------------------------------
  * closeModalIfInside

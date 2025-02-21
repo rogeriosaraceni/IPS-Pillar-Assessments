@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <span>Listing</span>
+        </div>
+
+        <table class="table table-bo table-fixed text-center">
+            <thead>
+                <tr>
+                    <th style="width: 100px;">Filename</th>
+                    <th style="width: 100px;">User</th>
+                    <th style="width: 100px;">Date</th>
+                    <th style="width: 100px;">Del</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Jana</td>
+                    <td>02/21/2025</td>
+                    <td>
+                        <a class="text-secondary" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+							<i class="bi bi-trash fs-5 icon-tab"></i>
+						</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script is:inline>
+    $('[data-row="delete"]').on('click', function () {
+        if (!confirm("Are you sure you want to delete?")) {
+            return false;
+        }
+    });
+</script>

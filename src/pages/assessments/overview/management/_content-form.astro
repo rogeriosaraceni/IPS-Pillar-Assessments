@@ -1,3 +1,7 @@
+---
+import ContentModal from "./_content-modal.astro";
+---
+
 <style>
     .table.table-pillar {
         font-size: 0.75rem;
@@ -14,23 +18,22 @@
         font-size: 0.85rem;
     }
     .title-accordion .icon {
+        transform: rotate(-180deg);
         transition: transform 0.2s ease-in-out;
     }
     .title-accordion.show .icon {
-        transform: rotate(180deg);
+        transform: rotate(0deg);
     }
 
-    @media (min-width: 576px) {
-        .modal-rating {
-            --bs-modal-width: 1200px;
-            z-index: 1111;
-        }
+    .select-pillar{
+        text-align: center;
+        padding-right: 0.8rem;
     }
 </style>
 
 <div class="card">
     <div class="card-body">
-        <div class="d-flex justify-content-end gap-2">
+        <div class="d-flex justify-content-between gap-2">
             <button
                 type="button"
                 id="toggle-all"
@@ -39,6 +42,8 @@
                 <i class="bi bi-layers lh-1"></i>
                 <small>Open/Close All</small>
             </button>
+
+            <button type="submit" class="btn btn-small btn-primary py-0 mb-1">Save</button>
         </div>
 
         <section class="table-responsive">
@@ -105,12 +110,17 @@
                         <td>12,7%</td>
                     </tr>
 
-                    <tr data-tr="child" style="display: none;">
+                    <tr data-tr="child">
                         <td>Strategic planning and definition of goals</td>
                         <td>Were the goals clearly rationale defined?</td>
                         <td>
                             <div class="d-flex justify-content-center gap-2">
-                                <a role="button" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="fs-5 text-secondar">
+                                <a
+                                    role="button"
+                                    class="fs-5 text-secondary"
+                                    data-bs-target="#modalRating"
+                                    data-bs-toggle="modal"
+                                >
                                     <span data-bs-toggle="tooltip" data-bs-title="Rating">
                                         <i class="bi bi-file-earmark-text"></i>
                                     </span>
@@ -119,12 +129,12 @@
                                 <a
                                     class="fs-5 text-secondary"
                                     data-bs-toggle="tooltip"
-                                    data-bs-title=""
+                                    data-bs-title="Attachments"
                                     data-type="iframe"
                                     data-fancybox
-                                    data-width="800"
-                                    data-height="400"
-                                    href=""
+                                    data-width="1200"
+                                    data-height="700"
+                                    href="../popups/attachments/"
                                 >
                                     <i class="bi bi-paperclip"></i>
                                 </a>
@@ -132,7 +142,7 @@
                         </td>
 
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -143,7 +153,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -154,7 +164,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -165,7 +175,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -176,7 +186,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -187,7 +197,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -198,7 +208,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -209,7 +219,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -220,7 +230,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -231,7 +241,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -242,7 +252,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -253,7 +263,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -264,7 +274,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -275,7 +285,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -286,7 +296,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -297,7 +307,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -308,7 +318,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="" class="form-select">
+                            <select name="" class="form-select select-pillar">
                                 <option value=""></option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -325,8 +335,14 @@
                 </tbody>
             </table>
         </section>
+
+        <div class="d-flex justify-content-end gap-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
     </div>
 </div>
+
+<ContentModal />
 
 <script is:inline>
     function trAccordion() {
@@ -346,50 +362,6 @@
         } else {
             childRowsAll.show("fast");
         }
-
         $('[data-title="accordion"]').toggleClass("show", !isVisible);
     });
 </script>
-
-<div
-    class="modal modal-rating fade"
-    id="exampleModalToggle"
-    aria-hidden="true"
-    aria-labelledby="exampleModalToggleLabel"
-    tabindex="-1"
->
-    <div class="modal-dialog modal-dialog-centered" style="">
-        <div class="modal-content">
-            <div class="modal-header py-1">
-                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
-                    Rating (Strategy and Business Cycle)
-                </h1>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close">
-                </button>
-            </div>
-
-            <div class="modal-body">
-                0 - Goals were not defined;<br />1 - The goals were defined,
-                but not using the definitions rationale in the IPS Managment
-                Book.<br />2 - The goals were defined in accordance with the
-                rationale and definitions in the IPS Management book, but
-                long-term planning (3-5 years) was not done for all dimensions
-                (felivery, safety, people, quality and cost);<br />3 - The goals
-                were defined in accordance with the rationale and definitions in
-                the IPS Management book, long-term planning (3-5 years) was done
-                for all dimensions (delivery, safety, people, quality, and
-                cost), but there is no results tracking and deviation treatments
-                on the routine;<br />4 - The goals were defined in accordance
-                with the rationale and definitions in the IPS Management book,
-                long-term planning (3-5 years) was done for all dimensions
-                (delivery, safety, people, quality, and cost) and there is
-                results tracking and deviation treatments on the routine.
-            </div>
-        </div>
-    </div>
-</div>
-

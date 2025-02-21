@@ -1,0 +1,126 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <span>Attachment</span>
+        </div>
+
+        <form id="upload_form" enctype="multipart/form-data" method="post">
+            <label class="w-100">
+                <div class="d-flex align-items-baseline flex-colum gap-1">
+                    <span>Attach file:</span>
+                    <small class="text-danger">Allowed formats (.doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png)</small>
+                </div>
+                <input
+                    type="file"
+                    class="form-control"
+                    name="file1"
+                    id="documento"
+                    accept=".doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png"
+                    onchange="uploadFile()"
+                >
+            </label>
+            <progress id="progressBar" class="w-100" value="0" max="100"></progress>
+
+            <h3 id="status"></h3>
+            <p id="loaded_n_total"></p>
+        </form>
+    </div>
+</div>
+
+<script is:inline>
+    let fileInput = document.getElementById("documento")
+
+    function uploadFile() {
+        for(const file of fileInput.files){
+            console.log(`Name: ${file.name} | Size: ${file.size} | Type: ${file.type}`)
+        }
+        //const documento  = fileInput.files[0];
+        //var unidade      = document.getElementById("unidade").value
+        //var questao_item = document.getElementById("questao_item").value
+        //var referencia   = document.getElementById("referencia").value
+
+        if (!validateExtensions(fileInput.files) || !validateFileSizeMax(fileInput.files) || !validateFileMultipleMax(fileInput.files)){
+            return false
+        }
+
+        const formdata = new FormData();
+        for (const documento of fileInput.files) {
+            formdata.append("documento[]", documento);
+        }
+        //formdata.append("documento", documento);
+        //formdata.append("unidade", unidade);
+        //formdata.append("questao_item", questao_item);
+        //formdata.append("referencia", referencia);
+
+        const ajax = new XMLHttpRequest()
+        ajax.upload.addEventListener("progress", progressHandler, false)
+        ajax.addEventListener("load", completeHandler, false)
+        ajax.addEventListener("error", errorHandler, false)
+        ajax.addEventListener("abort", abortHandler, false)
+        //ajax.open("POST", "processos.asp")
+        ajax.open("POST", "file_upload_parser.php")
+        ajax.send(formdata)
+    }
+
+    function validateExtensions(filesExtensions) {
+        const extensionsText = `.doc, .docx, .pdf, .xls, .xlsx, .ppt, .pptx, .jpeg, .jpg, .png`
+        const extensions = /(.doc|.docx|.pdf|.xls|.xlsx|.ppt|.pptx|.jpeg|.jpg|.png)$/i
+
+        for (const file of filesExtensions) {
+            const filePath = file.name;
+            if (!extensions.exec(filePath)) {
+                alert(`Fora das extensões permitidas: \n ${extensionsText}`)
+                fileInput.value = ""
+                return false
+            }
+        }
+        return true
+    }
+
+    function validateFileSizeMax(filesSizeMax){
+        let maxSize = 100 * 1024 * 1024; // 100MB
+
+        for(const file of filesSizeMax){
+            if(file.size > maxSize){
+                alert(`File ${file.name} is too large. The maximum allowed size is 100MB.`)
+                fileInput.value = ''
+                return false
+            }
+        }
+        return true
+    }
+
+    function validateFileMultipleMax(filesMultipleMax){
+        const maxFiles = 5;
+
+        if (filesMultipleMax.length > maxFiles) {
+            alert('You can only select a maximum of 5 files.')
+            fileInput.value = ''
+            return false
+        }
+        return true
+    }
+
+    function progressHandler(event) {
+        document.getElementById("loaded_n_total").innerHTML = "Carregado " + event.loaded + " bytes de " + event.total
+        var percent = (event.loaded / event.total) * 100
+        document.getElementById("progressBar").value = Math.round(percent)
+        document.getElementById("status").innerHTML = Math.round(percent) + "% loaded... Please wait"
+    }
+
+    function completeHandler(event) {
+        document.getElementById("status").innerHTML = event.target.responseText;
+        document.getElementById("progressBar").value = 0; //wil clear progress bar after successful upload
+        // if (event.target.responseText == '1') {
+        //     location.href = 'index.asp?action=cad&qi=<%=request("qi")%>&u=<%=request("u")%>&r=<%=request("r")%>'
+        // }
+    }
+
+    function errorHandler(event) {
+        document.getElementById("status").innerHTML = "Upload Failed"
+    }
+
+    function abortHandler(event) {
+        document.getElementById("status").innerHTML = "Upload Cancelled"
+    }
+</script>
