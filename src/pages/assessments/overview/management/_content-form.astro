@@ -1,44 +1,59 @@
 <style>
-    .table.table-pillar{
+    .table.table-pillar {
         font-size: 0.75rem;
     }
-    .table.table-pillar>thead>tr>th,
-    .table.table-pillar>tfoot>tr>th {
+    .table.table-pillar > thead > tr > th,
+    .table.table-pillar > tfoot > tr > th {
         font-size: 0.75rem;
     }
-    .title-accordion{
+    .title-accordion {
         display: flex;
         gap: 0.5rem;
         padding: 0.25rem 0;
         cursor: pointer;
         font-size: 0.85rem;
     }
-    .title-accordion .icon{
+    .title-accordion .icon {
         transition: transform 0.2s ease-in-out;
     }
-    .title-accordion.show .icon{
+    .title-accordion.show .icon {
         transform: rotate(180deg);
+    }
+
+    @media (min-width: 576px) {
+        .modal-rating {
+            --bs-modal-width: 1200px;
+            z-index: 1111;
+        }
     }
 </style>
 
 <div class="card">
     <div class="card-body">
         <div class="d-flex justify-content-end gap-2">
-            <button type="button" id="toggle-all" class="btn btn-small btn-secondary mb-1 d-flex align-items-center gap-1">
+            <button
+                type="button"
+                id="toggle-all"
+                class="btn btn-small btn-secondary mb-1 d-flex align-items-center gap-1"
+            >
                 <i class="bi bi-layers lh-1"></i>
                 <small>Open/Close All</small>
             </button>
         </div>
 
         <section class="table-responsive">
-            <table class="table table-bordered table-hover text-center table-fixed table-pillar">
+            <table
+                class="table table-bordered table-hover text-center table-fixed table-pillar"
+            >
                 <thead>
                     <tr>
                         <th style="width: 200px;">Book</th>
                         <th style="width: 200px;">Question</th>
                         <th style="width: 100px;">Options</th>
                         <th style="width: 100px;">Safety</th>
-                        <th style="width: 100px;">Environment &amp; Sustainability</th>
+                        <th style="width: 100px;"
+                            >Environment &amp; Sustainability</th
+                        >
                         <th style="width: 100px;">Quality</th>
                         <th style="width: 100px;">Human Resources</th>
                         <th style="width: 100px;">Wet Mill / Grind</th>
@@ -46,11 +61,15 @@
                         <th style="width: 100px;">Oil Refinery</th>
                         <th style="width: 100px;">Starch</th>
                         <th style="width: 100px;">Dextrose</th>
-                        <th style="width: 100px;">Refinery / Sweetener Refinery</th>
+                        <th style="width: 100px;"
+                            >Refinery / Sweetener Refinery</th
+                        >
                         <th style="width: 100px;">Packaging</th>
                         <th style="width: 100px;">Utilities</th>
                         <th style="width: 100px;">Project Engineering</th>
-                        <th style="width: 100px;">Maintenance &amp; Reliability</th>
+                        <th style="width: 100px;"
+                            >Maintenance &amp; Reliability</th
+                        >
                         <th style="width: 100px;">Contractors</th>
                         <th style="width: 100px;">Plant Management</th>
                         <th style="width: 100px;">Logistics</th>
@@ -89,7 +108,28 @@
                     <tr data-tr="child" style="display: none;">
                         <td>Strategic planning and definition of goals</td>
                         <td>Were the goals clearly rationale defined?</td>
-                        <td></td>
+                        <td>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a role="button" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="fs-5 text-secondar">
+                                    <span data-bs-toggle="tooltip" data-bs-title="Rating">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </span>
+                                </a>
+
+                                <a
+                                    class="fs-5 text-secondary"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title=""
+                                    data-type="iframe"
+                                    data-fancybox
+                                    data-width="800"
+                                    data-height="400"
+                                    href=""
+                                >
+                                    <i class="bi bi-paperclip"></i>
+                                </a>
+                            </div>
+                        </td>
 
                         <td>
                             <select name="" class="form-select">
@@ -278,19 +318,10 @@
                                 <option value="na">NA</option>
                             </select>
                         </td>
-                        <td>
-                            <select name="" class="form-select">
-                                <option value=""></option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="na">NA</option>
-                            </select>
+                        <td class="text-center">
+                            <span></span>
                         </td>
                     </tr>
-
                 </tbody>
             </table>
         </section>
@@ -299,45 +330,66 @@
 
 <script is:inline>
     function trAccordion() {
-        $('[data-tr="parent"]').on('click', function(){
-            $(this).next('[data-tr="child"]').toggle('fast')
-            $(this).find('[data-title="accordion"]').toggleClass('show');
-        })
+        $('[data-tr="parent"]').on("click", function () {
+            $(this).next('[data-tr="child"]').toggle("fast");
+            $(this).find('[data-title="accordion"]').toggleClass("show");
+        });
     }
-    trAccordion()
+    trAccordion();
 
-    $('#toggle-all').on('click', function() {
+    $("#toggle-all").on("click", function () {
         const childRowsAll = $('[data-tr="child"]');
-        const isVisible = childRowsAll.is(':visible');
+        const isVisible = childRowsAll.is(":visible");
 
         if (isVisible) {
-            childRowsAll.hide('fast');
+            childRowsAll.hide("fast");
         } else {
-            childRowsAll.show('fast');
+            childRowsAll.show("fast");
         }
 
-        $('[data-title="accordion"]').toggleClass('show', !isVisible);
+        $('[data-title="accordion"]').toggleClass("show", !isVisible);
     });
 </script>
 
-<!--
-                        <th style="width: 600px;">Ratings And Thresholds</th>
+<div
+    class="modal modal-rating fade"
+    id="exampleModalToggle"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1"
+>
+    <div class="modal-dialog modal-dialog-centered" style="">
+        <div class="modal-content">
+            <div class="modal-header py-1">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
+                    Rating (Strategy and Business Cycle)
+                </h1>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+            </div>
 
-                        <td class="text-start">
-                            0 - Goals were not defined;<br />1 - The goals were defined,
-                            but not using the definitions rationale in the IPS Managment
-                            Book.<br />2 - The goals were defined in accordance with the
-                            rationale and definitions in the IPS Management book, but
-                            long-term planning (3-5 years) was not done for all dimensions
-                            (felivery, safety, people, quality and cost);<br />3 - The goals
-                            were defined in accordance with the rationale and definitions in
-                            the IPS Management book, long-term planning (3-5 years) was done
-                            for all dimensions (delivery, safety, people, quality, and
-                            cost), but there is no results tracking and deviation treatments
-                            on the routine;<br />4 - The goals were defined in accordance
-                            with the rationale and definitions in the IPS Management book,
-                            long-term planning (3-5 years) was done for all dimensions
-                            (delivery, safety, people, quality, and cost) and there is
-                            results tracking and deviation treatments on the routine.
-                        </td>
--->
+            <div class="modal-body">
+                0 - Goals were not defined;<br />1 - The goals were defined,
+                but not using the definitions rationale in the IPS Managment
+                Book.<br />2 - The goals were defined in accordance with the
+                rationale and definitions in the IPS Management book, but
+                long-term planning (3-5 years) was not done for all dimensions
+                (felivery, safety, people, quality and cost);<br />3 - The goals
+                were defined in accordance with the rationale and definitions in
+                the IPS Management book, long-term planning (3-5 years) was done
+                for all dimensions (delivery, safety, people, quality, and
+                cost), but there is no results tracking and deviation treatments
+                on the routine;<br />4 - The goals were defined in accordance
+                with the rationale and definitions in the IPS Management book,
+                long-term planning (3-5 years) was done for all dimensions
+                (delivery, safety, people, quality, and cost) and there is
+                results tracking and deviation treatments on the routine.
+            </div>
+        </div>
+    </div>
+</div>
+
