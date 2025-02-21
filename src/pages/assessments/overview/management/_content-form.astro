@@ -6,8 +6,6 @@
     .table.table-pillar>tfoot>tr>th {
         font-size: 0.75rem;
     }
-
-
     .title-accordion{
         display: flex;
         gap: 0.5rem;
@@ -25,6 +23,12 @@
 
 <div class="card">
     <div class="card-body">
+        <div class="d-flex justify-content-end gap-2">
+            <button type="button" id="toggle-all" class="btn btn-small btn-secondary mb-1 d-flex align-items-center gap-1">
+                <i class="bi bi-layers lh-1"></i>
+                <small>Open/Close All</small>
+            </button>
+        </div>
 
         <section class="table-responsive">
             <table class="table table-bordered table-hover text-center table-fixed table-pillar">
@@ -82,7 +86,255 @@
                         <td>12,7%</td>
                     </tr>
 
-                    <tr data-tr="child">
+                    <tr data-tr="child" style="display: none;">
+                        <td>Strategic planning and definition of goals</td>
+                        <td>Were the goals clearly rationale defined?</td>
+                        <td class="text-start">
+                            0 - Goals were not defined;<br />1 - The goals were defined,
+                            but not using the definitions rationale in the IPS Managment
+                            Book.<br />2 - The goals were defined in accordance with the
+                            rationale and definitions in the IPS Management book, but
+                            long-term planning (3-5 years) was not done for all dimensions
+                            (felivery, safety, people, quality and cost);<br />3 - The goals
+                            were defined in accordance with the rationale and definitions in
+                            the IPS Management book, long-term planning (3-5 years) was done
+                            for all dimensions (delivery, safety, people, quality, and
+                            cost), but there is no results tracking and deviation treatments
+                            on the routine;<br />4 - The goals were defined in accordance
+                            with the rationale and definitions in the IPS Management book,
+                            long-term planning (3-5 years) was done for all dimensions
+                            (delivery, safety, people, quality, and cost) and there is
+                            results tracking and deviation treatments on the routine.
+                        </td>
+
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="" class="form-select">
+                                <option value=""></option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="na">NA</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr data-tr="parent">
+                        <td colspan="3" class="text-start">
+                            <div class="title-accordion" data-title="accordion">
+                                <i class="bi bi-chevron-down icon"></i>
+                                <span>Strategy and Business Cycle</span>
+                            </div>
+                        </td>
+                        <td>19%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>NA</td>
+                        <td>76%</td>
+                        <td>NA</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>NA</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>12,7%</td>
+                    </tr>
+
+                    <tr data-tr="child" style="display: none;">
                         <td>Strategic planning and definition of goals</td>
                         <td>Were the goals clearly rationale defined?</td>
                         <td class="text-start">
@@ -309,12 +561,24 @@
 </div>
 
 <script is:inline>
-    $('[data-tr="child"]').hide()
     function trAccordion() {
         $('[data-tr="parent"]').on('click', function(){
-            $('[data-title="accordion"]').toggleClass('show')
-            $('[data-tr="child"]').toggle('fast')
+            $(this).next('[data-tr="child"]').toggle('fast')
+            $(this).find('[data-title="accordion"]').toggleClass('show');
         })
     }
     trAccordion()
+
+    $('#toggle-all').on('click', function() {
+        const childRowsAll = $('[data-tr="child"]');
+        const isVisible = childRowsAll.is(':visible');
+
+        if (isVisible) {
+            childRowsAll.hide('fast');
+        } else {
+            childRowsAll.show('fast');
+        }
+
+        $('[data-title="accordion"]').toggleClass('show', !isVisible);
+    });
 </script>
