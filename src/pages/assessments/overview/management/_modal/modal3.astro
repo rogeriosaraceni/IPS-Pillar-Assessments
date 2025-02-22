@@ -1,0 +1,40 @@
+<style>
+    @media (min-width: 576px) {
+        .modal-rating {
+            --bs-modal-width: 1200px;
+            z-index: 1111;
+        }
+    }
+</style>
+
+<div
+    class="modal modal-rating fade"
+    id="modalRating3"
+    aria-hidden="true"
+    aria-labelledby="modalRating3Label"
+    tabindex="-1"
+>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-1">
+                <h1 class="modal-title fs-5" id="modalRating3Label">
+                    Rating (Goal Setting and Cascading)
+                </h1>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+            </div>
+
+            <div class="modal-body">
+                0 - Management metrics were not defined for all dimensions;<br>
+                1 - Management metrics were defined for all dimensions, but there is no monitoring at least weekly according to standardized tools of the IPS Management Metrics Book;<br>
+                2 - The management metrics were defined for all dimensions and there is monitoring at least weekly according to standardized tools of the IPS Management Metrics Book, but Deparment managers and supervisors do not know the causes of the deviations and/or there is no action plan for indicators out of target;<br>
+                3 - The management metrics were defined for all dimensions and there is monitoring at least weekly according to standardized tools of the IPS Management Metrics Book. Department Manager and supervisors know the causes of the deviations and there is an action plan for indicators out of target, Management metrics less than 80% but the trend for the last three consecutive months is positive in the main KPIs"<br>
+                4 - The management metrics were defined for all dimensions and there is monitoring at least weekly according to standardized tools of the IPS Management Metrics Book. Department Manager and supervisors know the causes of the deviations, there is an action plan for indicators out of target and at least 80% of the managerial metrics are within goal.
+            </div>
+        </div>
+    </div>
+</div>
