@@ -1,1 +1,1 @@
-# IPS Pillar-Assessments
+# IPS Pillar Assessments
