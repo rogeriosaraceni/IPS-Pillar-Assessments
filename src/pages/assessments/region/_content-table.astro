@@ -1,0 +1,132 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <span>Search</span>
+        </div>
+
+        <table class="table tab-zone table-fixed">
+            <colgroup>
+                <col width="100">
+                <col width="150">
+                <col width="180">
+                <col width="280">
+                <col width="400">
+                <col width="100">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Zone</th>
+                    <th>Completion</th>
+                    <th class="center">% Completion by Pillar</th>
+                    <th class="center">Countries</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="listagem" onclick="redirecionar(1);" data-search="africa">
+                    <td>
+                        <span class="btn  btn-orange  btn-status">In Progress</span>
+                    </td>
+                    <td class="countries">
+                        <h4>AFRICA</h4>
+                        <small>Total Countries: 11</small>
+                    </td>
+                    <td class="progress">
+                        <small>Zone completion: 97%</small>
+                        <div class="progress progress-mini">
+                            <div style="width: 97%;" class="progress-bar"></div>
+                        </div>
+                    </td>
+
+                    <td class="center">
+                        <div class="list-pillar">
+                            <ul>
+                                <li class="tooltip progress" data-bs-title="ENVIRONMENT">ENV</li>
+                                <li class="tooltip progress" data-bs-title="LOGISTICS">LOG</li>
+                                <li class="tooltip progress" data-bs-title="MAINTENANCE">MAI</li>
+                                <li class="tooltip progress" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="tooltip progress" data-bs-title="PEOPLE">PEO</li>
+                                <li class="tooltip progress" data-bs-title="QUALITY">QUA</li>
+                                <li class="tooltip progress" data-bs-title="SAFETY">SAF</li>
+                            </ul>
+                        </div>
+                    </td>
+
+                    <td>
+                        <ul class="flags">
+                            <li data-bs-toggle="tooltip" data-bs-title="Botswana">
+                                <img alt="image" src="/assets/images/flags/botswana.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Ghana">
+                                <img alt="image" src="/assets/images/flags/ghana.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Lesotho">
+                                <img alt="image" src="/assets/images/flags/lesotho.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Mozambique">
+                                <img alt="image" src="/assets/images/flags/mozambique.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Namibia">
+                                <img alt="image" src="/assets/images/flags/namibia.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Nigeria">
+                                <img alt="image" src="/assets/images/flags/nigeria.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="South Africa">
+                                <img alt="image" src="/assets/images/flags/south-africa.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="eSwatini">
+                                <img alt="image" src="/assets/images/flags/swaziland.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Tanzania">
+                                <img alt="image" src="/assets/images/flags/tanzania.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Uganda">
+                                <img alt="image" src="/assets/images/flags/uganda.svg">
+                            </li>
+
+                            <li data-bs-toggle="tooltip" data-bs-title="Zambia">
+                                <img alt="image" src="/assets/images/flags/zambia.svg">
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="text-right">
+                        <a class="btn">
+                            <i class="fa fa-folder" aria-hidden="true"></i> View
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .tab-zone .flags{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    .tab-zone .flags li{
+        display: block;
+    }
+    .tab-zone .flags li img {
+        width: 100%;
+        max-width: 30px;
+    }
+</style>
