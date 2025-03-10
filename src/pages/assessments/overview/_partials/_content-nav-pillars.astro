@@ -68,37 +68,25 @@ const btnsPillars = [
 <div class="card">
     <div class="card-body">
         <section class="wrapper-sticky-tabs">
-            <ul class="nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
-                {
-                    btnsPillars.map((pillar) => (
-                        <li class="nav-item">
-                            <a class="nav-link" href={pillar.link}>
-                                <i class={pillar.icon}></i>
-                                {pillar.name}
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <ul class="nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+                    {
+                        btnsPillars.map((pillar) => (
+                            <li class="nav-item">
+                                <a class="nav-link" href={pillar.link}>
+                                    <i class={pillar.icon}></i>
+                                    {pillar.name}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <h6 class="mb-0 fw-bold">Total Plant Score: 77%</h6>
+            </div>
         </section>
     </div>
 </div>
-
-<!--
-<script is:inline>
-    function navLinkTabsActive() {
-        const currentUrl = window.location.pathname
-        console.log(currentUrl);
-
-        const navLinks = $(`#pills-tab a[href="${currentUrl}"]`)
-
-        if (navLinks) {
-            navLinks.addClass('active')
-        }
-    }
-    navLinkTabsActive()
-</script>
--->
 
 <script is:inline>
     function navLinkTabsActive() {

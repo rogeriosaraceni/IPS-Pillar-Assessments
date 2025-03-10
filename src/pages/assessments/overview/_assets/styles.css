@@ -60,9 +60,9 @@
 }
 
 
-[data-tr="parent"] td.selected-value-0 { background-color: #f8696b; }
-[data-tr="parent"] td.selected-value-1 { background-color: #f1bb55; }
-[data-tr="parent"] td.selected-value-2 { background-color: #e8e583; }
-[data-tr="parent"] td.selected-value-3 { background-color: #96d996; }
-[data-tr="parent"] td.selected-value-4 { background-color: #63be7b; }
-[data-tr="parent"] td.selected-value-na{ background-color: #d0cece; }
+[data-tr="parent"] td.selected-value-0 { background-color: rgb(236, 50, 50); }
+[data-tr="parent"] td.selected-value-1 { background-color: rgb(240, 126, 145); }
+[data-tr="parent"] td.selected-value-2 { background-color: rgb(248, 179, 50); }
+[data-tr="parent"] td.selected-value-3 { background-color: rgb(247, 247, 14); }
+[data-tr="parent"] td.selected-value-4 { background-color: rgb(14, 189, 14); }
+[data-tr="parent"] td.selected-value-na{ background-color: rgb(175, 169, 169); }
