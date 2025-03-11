@@ -1,44 +1,3 @@
-<style is:inline>
-    .tab-zone tr{
-        cursor: pointer;
-    }
-    .tab-zone .flags{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    .tab-zone .flags li{
-        display: block;
-    }
-    .tab-zone .flags li img {
-        width: 100%;
-        max-width: 30px;
-    }
-
-
-    .tab-zone .progress.progress-mini,
-    .tab-zone .progress.progress-mini .progress-bar {
-        height: 5px;
-        margin-bottom: 0;
-    }
-
-    .tab-zone .list-pillar{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-    }
-    .tab-zone .list-pillar .badge{
-        line-height: normal;
-        font-weight: 400;
-    }
-</style>
-
 <div class="card">
     <div class="card-body">
         <div class="card-title">
@@ -60,7 +19,7 @@
                 </thead>
 
                 <tbody>
-                    <tr onclick="redirecionar(1);" data-search="">
+                    <tr class="curso-pointer" onclick="redirecionar(1);" data-search="">
                         <td>
                             <span class="btn btn-small btn-warning">In Progress</span>
                         </td>
@@ -70,44 +29,44 @@
                         </td>
                         <td>
                             <small>Region completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
                         <td>
                             <small>Score completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
-                        <td class="center">
-                            <ul class="list-pillar">
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
+                        <td>
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
                             </ul>
                         </td>
 
                         <td>
-                            <ul class="flags">
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
                                 <li data-bs-toggle="tooltip" data-bs-title="Brazil">
-                                    <img alt="image" src="/assets/images/flags/brazil.svg">
+                                    <img alt="image" src="/assets/images/flags/brazil.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="Colombia">
-                                    <img alt="image" src="/assets/images/flags/colombia.svg">
+                                    <img alt="image" src="/assets/images/flags/colombia.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="Mexico">
-                                    <img alt="image" src="/assets/images/flags/mexico.svg">
+                                    <img alt="image" src="/assets/images/flags/mexico.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="Peru">
-                                    <img alt="image" src="/assets/images/flags/peru.svg">
+                                    <img alt="image" src="/assets/images/flags/peru.svg" width="30px">
                                 </li>
                             </ul>
                         </td>
@@ -119,7 +78,7 @@
                         </td>
                     </tr>
 
-                    <tr onclick="redirecionar(1);" data-search="">
+                    <tr class="curso-pointer" onclick="redirecionar(1);" data-search="">
                         <td>
                             <span class="btn btn-small btn-warning">In Progress</span>
                         </td>
@@ -129,36 +88,36 @@
                         </td>
                         <td>
                             <small>Region completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
                         <td>
                             <small>Score completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
-                        <td class="center">
-                            <ul class="list-pillar">
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
+                        <td>
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
                             </ul>
                         </td>
 
                         <td>
-                            <ul class="flags">
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
                                 <li data-bs-toggle="tooltip" data-bs-title="Canada">
-                                    <img alt="image" src="/assets/images/flags/canada.svg">
+                                    <img alt="image" src="/assets/images/flags/canada.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="United States">
-                                    <img alt="image" src="/assets/images/flags/united-states-of-america.svg">
+                                    <img alt="image" src="/assets/images/flags/united-states-of-america.svg" width="30px">
                                 </li>
                             </ul>
                         </td>
@@ -170,7 +129,7 @@
                         </td>
                     </tr>
 
-                    <tr onclick="redirecionar(1);" data-search="">
+                    <tr class="curso-pointer" onclick="redirecionar(1);" data-search="">
                         <td>
                             <span class="btn btn-small btn-warning">In Progress</span>
                         </td>
@@ -180,36 +139,36 @@
                         </td>
                         <td>
                             <small>Region completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
                         <td>
                             <small>Score completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
-                        <td class="center">
-                            <ul class="list-pillar">
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
+                        <td>
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
                             </ul>
                         </td>
 
                         <td>
-                            <ul class="flags">
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
                                 <li data-bs-toggle="tooltip" data-bs-title="Germany">
-                                    <img alt="image" src="/assets/images/flags/germany.svg">
+                                    <img alt="image" src="/assets/images/flags/germany.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="Pakistan">
-                                    <img alt="image" src="/assets/images/flags/pakistan.svg">
+                                    <img alt="image" src="/assets/images/flags/pakistan.svg" width="30px">
                                 </li>
                             </ul>
                         </td>
@@ -221,7 +180,7 @@
                         </td>
                     </tr>
 
-                    <tr onclick="redirecionar(1);" data-search="">
+                    <tr class="curso-pointer" onclick="redirecionar(1);" data-search="">
                         <td>
                             <span class="btn btn-small btn-warning">In Progress</span>
                         </td>
@@ -231,44 +190,44 @@
                         </td>
                         <td>
                             <small>Region completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
                         <td>
                             <small>Score completion: 97%</small>
-                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
                                 <div class="progress-bar bg-success" style="width: 75%;"></div>
                             </div>
                         </td>
 
-                        <td class="center">
-                            <ul class="list-pillar">
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
-                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
-                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
+                        <td>
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill fw-normal lh-sm text-bg-warning" data-bs-toggle="tooltip" data-bs-title="RELIABILITY">REL</li>
                             </ul>
                         </td>
 
                         <td>
-                            <ul class="flags">
+                            <ul class="list-unstyled mb-0 d-flex align-items-center gap-1">
                                 <li data-bs-toggle="tooltip" data-bs-title="China">
-                                    <img alt="image" src="/assets/images/flags/china.svg">
+                                    <img alt="image" src="/assets/images/flags/china.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="India">
-                                    <img alt="image" src="/assets/images/flags/india.svg">
+                                    <img alt="image" src="/assets/images/flags/india.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="Malaysia">
-                                    <img alt="image" src="/assets/images/flags/malaysia.svg">
+                                    <img alt="image" src="/assets/images/flags/malaysia.svg" width="30px">
                                 </li>
 
                                 <li data-bs-toggle="tooltip" data-bs-title="Thailand">
-                                    <img alt="image" src="/assets/images/flags/thailand.svg">
+                                    <img alt="image" src="/assets/images/flags/thailand.svg" width="30px">
                                 </li>
                             </ul>
                         </td>

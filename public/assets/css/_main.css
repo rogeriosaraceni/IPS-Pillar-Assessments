@@ -6,6 +6,8 @@ scrollbar
 title-breadcrumb
 popover-app
 charts
+class auxiliar
+
 
 complementary classes
 //////////////////////////////////////////////////////////////////// */
@@ -202,3 +204,8 @@ card-title
         background-color: #1a1f2c !important;
     }
 }
+
+/* --------------------------------------------------------------------
+* - class auxiliar
+---------------------------------------------------------------------- */
+.cursor-pointer{ cursor: pointer;}
