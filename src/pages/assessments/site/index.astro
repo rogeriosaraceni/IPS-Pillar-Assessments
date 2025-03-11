@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import ContentSelect  from './_content-select.astro';
 import ContentAssessments from './_content-assessments.astro';
 import ContentSites from './_content-sites.astro';
 ---
@@ -12,6 +13,7 @@ import ContentSites from './_content-sites.astro';
         </div>
     </div>
 
+    <ContentSelect />
     <ContentAssessments />
     <ContentSites />
 </Layout>
