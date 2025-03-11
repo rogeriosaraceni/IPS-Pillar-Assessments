@@ -115,10 +115,11 @@ label-clearfix
     content: "\00a0";
 }
 
-@media(max-width: 1200px) {.label-clearfix.last-xl::before { content: "";}}
-@media (max-width: 992px) {.label-clearfix.last-lg::before { content: "";}}
-@media (max-width: 768px) {.label-clearfix.last-md::before { content: "";}}
-@media (max-width: 576px) {.label-clearfix.last-sm::before { content: "";}}
+@media(max-width: 1400px){.label-clearfix.last-xl::before { content: "";}}
+@media(max-width: 1200px){.label-clearfix.last-xl::before { content: "";}}
+@media(max-width: 992px) {.label-clearfix.last-lg::before { content: "";}}
+@media(max-width: 768px) {.label-clearfix.last-md::before { content: "";}}
+@media(max-width: 576px) {.label-clearfix.last-sm::before { content: "";}}
 
 /* --------------------------------------------------------------------
 list-group-item

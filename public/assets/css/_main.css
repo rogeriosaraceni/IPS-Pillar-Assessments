@@ -79,6 +79,7 @@ btns
     background-color: transparent;
 }
 
+@media(max-width: 1400px){ .btn-last-xxl{ float: right;}}
 @media(max-width: 1200px){ .btn-last-xl{ float: right;}}
 @media(max-width: 992px) { .btn-last-lg{ float: right;}}
 @media(max-width: 768px) { .btn-last-md{ float: right;}}
