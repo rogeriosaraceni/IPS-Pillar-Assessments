@@ -39,7 +39,7 @@ app variables
     --bs-danger-rgb: 225, 87, 100;
 
     --bs-light: #e6e2e2;
-    --bs-light-rgb: 121, 117, 118;
+    --bs-light-rgb: 230, 226, 226;
 }
 
 .btn-primary{
@@ -74,6 +74,10 @@ app variables
 .btn-warning {
     color: #fff !important;
 }
+.text-bg-light {
+    color: #555 !important;
+}
+
 
 /* --------------------------------------------------------------------
 breadcrumb-app
