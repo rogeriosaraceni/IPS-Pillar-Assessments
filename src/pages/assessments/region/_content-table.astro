@@ -1,119 +1,7 @@
-<div class="card">
-    <div class="card-body">
-        <div class="card-title">
-            <span>Search</span>
-        </div>
-
-        <table class="table tab-zone table-fixed">
-            <colgroup>
-                <col width="100">
-                <col width="150">
-                <col width="180">
-                <col width="280">
-                <col width="400">
-                <col width="100">
-            </colgroup>
-
-            <thead>
-                <tr>
-                    <th>Status</th>
-                    <th>Zone</th>
-                    <th>Completion</th>
-                    <th class="center">% Completion by Pillar</th>
-                    <th class="center">Countries</th>
-                    <th></th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr class="listagem" onclick="redirecionar(1);" data-search="africa">
-                    <td>
-                        <span class="btn  btn-orange  btn-status">In Progress</span>
-                    </td>
-                    <td class="countries">
-                        <h4>AFRICA</h4>
-                        <small>Total Countries: 11</small>
-                    </td>
-                    <td class="progress">
-                        <small>Zone completion: 97%</small>
-                        <div class="progress progress-mini">
-                            <div style="width: 97%;" class="progress-bar"></div>
-                        </div>
-                    </td>
-
-                    <td class="center">
-                        <div class="list-pillar">
-                            <ul>
-                                <li class="tooltip progress" data-bs-title="ENVIRONMENT">ENV</li>
-                                <li class="tooltip progress" data-bs-title="LOGISTICS">LOG</li>
-                                <li class="tooltip progress" data-bs-title="MAINTENANCE">MAI</li>
-                                <li class="tooltip progress" data-bs-title="MANAGEMENT">MAN</li>
-                                <li class="tooltip progress" data-bs-title="PEOPLE">PEO</li>
-                                <li class="tooltip progress" data-bs-title="QUALITY">QUA</li>
-                                <li class="tooltip progress" data-bs-title="SAFETY">SAF</li>
-                            </ul>
-                        </div>
-                    </td>
-
-                    <td>
-                        <ul class="flags">
-                            <li data-bs-toggle="tooltip" data-bs-title="Botswana">
-                                <img alt="image" src="/assets/images/flags/botswana.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Ghana">
-                                <img alt="image" src="/assets/images/flags/ghana.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Lesotho">
-                                <img alt="image" src="/assets/images/flags/lesotho.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Mozambique">
-                                <img alt="image" src="/assets/images/flags/mozambique.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Namibia">
-                                <img alt="image" src="/assets/images/flags/namibia.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Nigeria">
-                                <img alt="image" src="/assets/images/flags/nigeria.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="South Africa">
-                                <img alt="image" src="/assets/images/flags/south-africa.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="eSwatini">
-                                <img alt="image" src="/assets/images/flags/swaziland.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Tanzania">
-                                <img alt="image" src="/assets/images/flags/tanzania.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Uganda">
-                                <img alt="image" src="/assets/images/flags/uganda.svg">
-                            </li>
-
-                            <li data-bs-toggle="tooltip" data-bs-title="Zambia">
-                                <img alt="image" src="/assets/images/flags/zambia.svg">
-                            </li>
-                        </ul>
-                    </td>
-                    <td class="text-right">
-                        <a class="btn">
-                            <i class="fa fa-folder" aria-hidden="true"></i> View
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<style>
+<style is:inline>
+    .tab-zone tr{
+        cursor: pointer;
+    }
     .tab-zone .flags{
         list-style: none;
         margin: 0;
@@ -129,4 +17,286 @@
         width: 100%;
         max-width: 30px;
     }
+
+
+    .tab-zone .progress.progress-mini,
+    .tab-zone .progress.progress-mini .progress-bar {
+        height: 5px;
+        margin-bottom: 0;
+    }
+
+    .tab-zone .list-pillar{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    .tab-zone .list-pillar .badge{
+        line-height: normal;
+        font-weight: 400;
+    }
 </style>
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <span>Search</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover tab-zone table-fixed">
+                <thead>
+                    <tr>
+                        <th style="width: 120px;" class="text-start">Status</th>
+                        <th style="width: 150px;" class="text-start">Region</th>
+                        <th style="width: 160px;" class="text-start">Completion</th>
+                        <th style="width: 160px;" class="text-start">Score</th>
+                        <th style="width: 330px;" class="text-start">% Completion by Pillar</th>
+                        <th style="width: 250px;" class="text-start">Countries</th>
+                        <th style="width: 100px;"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr onclick="redirecionar(1);" data-search="">
+                        <td>
+                            <span class="btn btn-small btn-warning">In Progress</span>
+                        </td>
+                        <td>
+                            <h5 class="mb-0">LATAM</h5>
+                            <small>Total Countries: 4</small>
+                        </td>
+                        <td>
+                            <small>Region completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <small>Score completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td class="center">
+                            <ul class="list-pillar">
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="ENVIRONMENT">ENV</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="LOGISTICS">LOG</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="MAINTENANCE">MAI</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                            </ul>
+                        </td>
+
+                        <td>
+                            <ul class="flags">
+                                <li data-bs-toggle="tooltip" data-bs-title="Brazil">
+                                    <img alt="image" src="/assets/images/flags/brazil.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="Colombia">
+                                    <img alt="image" src="/assets/images/flags/colombia.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="Mexico">
+                                    <img alt="image" src="/assets/images/flags/mexico.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="Peru">
+                                    <img alt="image" src="/assets/images/flags/peru.svg">
+                                </li>
+                            </ul>
+                        </td>
+
+                        <td class="text-right">
+                            <a class="btn btn-light">
+                                <i class="bi bi-folder fs-6"></i> View
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr onclick="redirecionar(1);" data-search="">
+                        <td>
+                            <span class="btn btn-small btn-warning">In Progress</span>
+                        </td>
+                        <td>
+                            <h5 class="mb-0">NA</h5>
+                            <small>Total Countries: 2</small>
+                        </td>
+                        <td>
+                            <small>Region completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <small>Score completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td class="center">
+                            <ul class="list-pillar">
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="ENVIRONMENT">ENV</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="LOGISTICS">LOG</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="MAINTENANCE">MAI</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                            </ul>
+                        </td>
+
+                        <td>
+                            <ul class="flags">
+                                <li data-bs-toggle="tooltip" data-bs-title="Canada">
+                                    <img alt="image" src="/assets/images/flags/canada.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="United States">
+                                    <img alt="image" src="/assets/images/flags/united-states-of-america.svg">
+                                </li>
+                            </ul>
+                        </td>
+
+                        <td class="text-right">
+                            <a class="btn btn-light">
+                                <i class="bi bi-folder fs-6"></i> View
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr onclick="redirecionar(1);" data-search="">
+                        <td>
+                            <span class="btn btn-small btn-warning">In Progress</span>
+                        </td>
+                        <td>
+                            <h5 class="mb-0">EMEA</h5>
+                            <small>Total Countries: 2</small>
+                        </td>
+                        <td>
+                            <small>Region completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <small>Score completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td class="center">
+                            <ul class="list-pillar">
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="ENVIRONMENT">ENV</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="LOGISTICS">LOG</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="MAINTENANCE">MAI</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                            </ul>
+                        </td>
+
+                        <td>
+                            <ul class="flags">
+                                <li data-bs-toggle="tooltip" data-bs-title="Germany">
+                                    <img alt="image" src="/assets/images/flags/germany.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="Pakistan">
+                                    <img alt="image" src="/assets/images/flags/pakistan.svg">
+                                </li>
+                            </ul>
+                        </td>
+
+                        <td class="text-right">
+                            <a class="btn btn-light">
+                                <i class="bi bi-folder fs-6"></i> View
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr onclick="redirecionar(1);" data-search="">
+                        <td>
+                            <span class="btn btn-small btn-warning">In Progress</span>
+                        </td>
+                        <td>
+                            <h5 class="mb-0">APAC</h5>
+                            <small>Total Countries: 4</small>
+                        </td>
+                        <td>
+                            <small>Region completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <small>Score completion: 97%</small>
+                            <div class="progress progress-mini" role="progressbar" aria-label="" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar bg-success" style="width: 75%;"></div>
+                            </div>
+                        </td>
+
+                        <td class="center">
+                            <ul class="list-pillar">
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="ENVIRONMENT">ENV</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="LOGISTICS">LOG</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="MAINTENANCE">MAI</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="MANAGEMENT">MAN</li>
+                                <li class="badge rounded-pill text-bg-warning" data-bs-toggle="tooltip" data-bs-title="PEOPLE">PEO</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="QUALITY">QUA</li>
+                                <li class="badge rounded-pill text-bg-success" data-bs-toggle="tooltip" data-bs-title="SAFETY">SAF</li>
+                            </ul>
+                        </td>
+
+                        <td>
+                            <ul class="flags">
+                                <li data-bs-toggle="tooltip" data-bs-title="China">
+                                    <img alt="image" src="/assets/images/flags/china.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="India">
+                                    <img alt="image" src="/assets/images/flags/india.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="Malaysia">
+                                    <img alt="image" src="/assets/images/flags/malaysia.svg">
+                                </li>
+
+                                <li data-bs-toggle="tooltip" data-bs-title="Thailand">
+                                    <img alt="image" src="/assets/images/flags/thailand.svg">
+                                </li>
+                            </ul>
+                        </td>
+
+                        <td class="text-right">
+                            <a class="btn btn-light">
+                                <i class="bi bi-folder fs-6"></i> View
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    function redirecionar(id){
+        if (id == 1) {
+            window.location.href = '/assessments/country/';
+        }
+    }
+</script>
