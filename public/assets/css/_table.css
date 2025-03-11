@@ -11,7 +11,7 @@ dataTables-custom - page-link
 //////////////////////////////////////////////////////////////////// */
 
 .table{
-    --bg-thead: var(--color-green-ingredion);
+    --bg-thead: #ece9e9;
 }
 [data-bs-theme=dark] .table {
     --bg-thead: #202634;
@@ -26,7 +26,7 @@ table>thead>tr>th / table>tfoot>tr>th
 
 .table>thead>tr>th,
 .table>tfoot>tr>th {
-    color: #fff;
+    color: #222;
     border-bottom-width: 1px;
     font-weight: 400;
     padding-top: 0.3rem;
@@ -43,6 +43,7 @@ table>thead>tr>th / table>tfoot>tr>th
     padding: 0.1rem 0.3rem;
     vertical-align: middle;
     border-color: var(--bs-border-color);
+    border-color: #cfcfcf;
 }
 .table-hover tbody tr:hover {
 	color: #212529;
